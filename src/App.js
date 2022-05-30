@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from './shared/Navbar';
 
 const App = () => {
   return (
-    <div className=''>
-      <h1 className='text-primary'>Hello World</h1>
+    <div className='container mx-auto h-[2000vh]'>
+      <Navbar />
     </div>
   );
 };

@@ -1,3 +1,22 @@
+/* Tailwind css  */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+/* basic setup */
+* {
+	font-family: "Poppins", sans-serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	transition: all 0.3s ease;
+}
+
+/* custom class */
+.font-pacifico {
+	font-family: "Pacifico", cursive;
+}
