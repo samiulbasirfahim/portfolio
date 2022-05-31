@@ -1,30 +1,92 @@
-import React, { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import useScroll from '../hooks/useScroll';
+import React from "react"
+import { Link, NavLink } from "react-router-dom"
+import useScroll from "../hooks/useScroll"
+import { Spring, animated } from "react-spring"
 
 const Navbar = () => {
-    const isSticky = useScroll();
+	const isSticky = useScroll()
 
-    console.log(isSticky);
-    const navLinks = <>
-        <NavLink className="text-xl mx-4 font-bold border-base-content font-mono hover:border-b-4 hover:opacity-20" to="/">Home</NavLink>
-        <NavLink className="text-xl mx-4 font-bold border-base-content font-mono hover:border-b-4 hover:opacity-20" to="/blogs">Blogs</NavLink>
-        <NavLink className="text-xl mx-4 font-bold border-base-content font-mono hover:border-b-4 hover:opacity-20" to="/about">About</NavLink>
-        <NavLink className="text-xl mx-4 font-bold border-base-content font-mono hover:border-b-4 hover:opacity-20" to="/contact">Contact</NavLink>
-    </>
-    return (
-        <section className={isSticky ? "fixed top-0 container" : "fixed top-[-1000vh] container"}>
-            <section className='flex justify-between items-center py-8'>
-                <div>
-                    <Link to="/" className='font-pacifico font-bold text-2xl hover:text-primary hover:opacity-20'>Fahim</Link>
-                </div>
-                <div>
-                    {navLinks}
-                </div>
-                <div>  <a href='mailto:samiulbasirfahim@outlook.com' className='font-pacifico font-bold text-2xl hover:text-primary hover:opacity-20'>Hire me{">"} </a></div>
-            </section>
-        </section>
-    );
-};
+	console.log(isSticky)
+	const navLinks = (
+		<>
+			<NavLink
+				style={({ isActive } = {}) => ({
+					color: isActive ? "#FFBEDA" : "",
+					borderBottom: isActive ? "4px solid #FFBEDA" : "none",
+				})}
+				className="text-xl mx-4 font-bold border-base-content font-mono   "
+				to="/"
+			>
+				Home
+			</NavLink>
+			<NavLink
+				style={({ isActive } = {}) => ({
+					color: isActive ? "#FFBEDA" : "",
+					borderBottom: isActive ? "4px solid #FFBEDA" : "none",
+				})}
+				className="text-xl mx-4 font-bold border-base-content font-mono   "
+				to="/blogs"
+			>
+				Blogs
+			</NavLink>
+			<NavLink
+				style={({ isActive } = {}) => ({
+					color: isActive ? "#FFBEDA" : "",
+					borderBottom: isActive ? "4px solid #FFBEDA" : "none",
+				})}
+				className="text-xl mx-4 font-bold border-base-content font-mono   "
+				to="/about"
+			>
+				About
+			</NavLink>
+			<NavLink
+				style={({ isActive } = {}) => ({
+					color: isActive ? "#FFBEDA" : "",
+					borderBottom: isActive ? "4px solid #FFBEDA" : "none",
+				})}
+				className="text-xl mx-4 font-bold border-base-content font-mono   "
+				to="/contact"
+			>
+				Contact
+			</NavLink>
+		</>
+	)
+	return (
+		<section className={isSticky ? "block " : "hidden"}>
+			<section className="flex justify-between items-center py-8 fixed top-0 container mx-autos">
+				<div>
+					<Link
+						to="/"
+						className="font-pacifico font-bold text-2xl hover:text-primary hover:opacity-20"
+					>
+						Fahim
+					</Link>
+				</div>
+				<div>{navLinks}</div>
+				<div>
+					<Spring
+						loop
+						from={{ opacity: 0, color: "red" }}
+						to={[
+							{ opacity: 1, color: "#ffaaee" },
+							{ opacity: 0, color: "rgb(14,26,19)" },
+						]}
+					>
+						{(styles) => (
+							<animated.div style={styles}>
+								<a
+									href="mailto:samiulbasirfahim@outlook.com"
+									className="font-pacifico font-bold text-2xl hover:text-primary hover:opacity-20"
+								>
+									Hire me{">"}{" "}
+								</a>
+							</animated.div>
+						)}
+					</Spring>
+				</div>
+			</section>
+		</section>
+	)
+}
 
-export default Navbar;
+export default Navbar
