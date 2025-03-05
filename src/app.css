@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import "tailwindcss";
+
+* {
+    font-family: "IBM Plex Mono", monospace;
+}
+
+/* 
+--primary: teal-400
+--secondary: sky-400
+--accent: pink-400
+*/
+
+.debug-border {
+    /* @apply outline-2 outline-teal-400 outline-dashed; */
+}
+
+@layer utilities {
+    .container {
+        max-width: 768px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @media (max-width: 1536px) {
+        .container {
+            max-width: 1024px;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        .container {
+            max-width: 960px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            max-width: 896px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            max-width: 640px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .container {
+            max-width: 95%;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+}
+
+body {
+    @apply bg-gray-800 text-gray-100;
+}

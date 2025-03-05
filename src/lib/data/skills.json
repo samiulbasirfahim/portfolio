@@ -1,0 +1,76 @@
+{
+    "languages": [
+        {
+            "name": "C",
+            "icon_name": "..."
+        },
+        {
+            "name": "C++",
+            "icon_name": "..."
+        },
+        {
+            "name": "Rust",
+            "icon_name": "..."
+        },
+        {
+            "name": "JavaScript",
+            "icon_name": "..."
+        },
+        {
+            "name": "TypeScript",
+            "icon_name": "..."
+        },
+        {
+            "name": "Python",
+            "icon_name": "..."
+        }
+    ],
+    "backend": [
+        {
+            "name": "Node.js",
+            "icon_name": "..."
+        },
+        {
+            "name": "Bun",
+            "icon_name": "..."
+        },
+        {
+            "name": "Express.js",
+            "icon_name": "..."
+        },
+        {
+            "name": "Hono",
+            "icon_name": "..."
+        },
+        {
+            "name": "MongoDB",
+            "icon_name": "..."
+        },
+        {
+            "name": "Mongoose",
+            "icon_name": "..."
+        },
+        {
+            "name": "Prisma",
+            "icon_name": "..."
+        }
+    ],
+    "frontend": [
+        {
+            "name": "React.js",
+            "icon_name": "..."
+        },
+        {
+            "name": "Next.js",
+            "icon_name": "..."
+        },
+        {
+            "name": "SvelteKit",
+            "icon_name": "..."
+        },
+        {
+            "name": "TailwindCSS",
+            "icon_name": "..."
+        }
+    ]
+}
