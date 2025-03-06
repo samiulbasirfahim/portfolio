@@ -1,10 +1,13 @@
 <script lang="ts">
+    import Icon from "@iconify/svelte";
+    import Heading from "$lib/Components/Heading.svelte";
+
     const { data } = $props();
 </script>
 
-<section class="space-y-4">
+<section class="space-y-4 relative">
     <div class="space-y-4">
-        <h2 class="text-2xl font-semibold mb-4 italic">About</h2>
+        <Heading title="About" />
         <p class="">
             I'm Fahim, a self-taught developer from Mymensingh, Bangladesh. I’ve
             been coding for three years, working on both frontend and backend
@@ -35,15 +38,42 @@
         </p>
     </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-4 italic">Skills</h2>
-    {#each Object.entries(data.skills) as [category, skillset]}
-        <div class="hover:bg-teal-400/10 p-4 rounded-md my-4">
-            <h3 class="text-xl uppercase">{category}</h3>
-            <ul class="grid space-x-1 mt-2">
-                {#each skillset as skill}
-                    <li class="list-disc list-inside">{skill.name}</li>
-                {/each}
-            </ul>
-        </div>
-    {/each}
+    <section class="space-y-4">
+        <Heading title="Skills" />
+        {#each Object.entries(data.skills) as [category, skillset]}
+            <div class="rounded-md p-2 space-y-2">
+                <h3 class="text-xl uppercase font-semibold">{category}</h3>
+                <ul class="grid md:grid-cols-2 grid-cols-1 gap-4">
+                    {#each skillset as { name, icon } ([name, icon])}
+                        <li
+                            class="flex py-4 px-3 rounded-sm items-center gap-2 hover:bg-teal-400/20 bg-teal-400/10"
+                        >
+                            <Icon {icon} font-size="22" class="text-cyan-400"/>
+                            <p class="text-">{name}</p>
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+        {/each}
+    </section>
+
+    <section class="space-y-4">
+        <Heading title="Links" />
+        <ul class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+            {#each data.links as { name, icon, href } (href)}
+                <li
+                    class="flex p-2 rounded-sm items-center gap-2 hover:bg-teal-400/20 relative bg-teal-400/10"
+                >
+                    <Icon {icon} font-size="26" />
+                    <div class="">
+                        <a {href} target="_blank">
+                            <span class="absolute inset-0"></span>
+                            <p>{name}</p>
+                        </a>
+                        <p class="text-xs">Samiul Basir Fahim</p>
+                    </div>
+                </li>
+            {/each}
+        </ul>
+    </section>
 </section>

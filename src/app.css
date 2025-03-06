@@ -61,3 +61,7 @@
 body {
     @apply bg-gray-800 text-gray-100;
 }
+
+strong {
+    @apply text-teal-400 font-semibold italic;
+}

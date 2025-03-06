@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Github",
+    "icon": "simple-icons:github",
+    "href": "https://github.com/samiulbasirfahim"
+  },
+  {
+    "name": "LeetCode",
+    "icon": "simple-icons:leetcode",
+    "href": "https://leetcode.com/u/samiulbasirfahim/"
+  },
+  {
+    "name": "CodeChef",
+    "icon": "simple-icons:codechef",
+    "href": "https://www.codechef.com/users/samiulbsrfahim"
+  },
+  {
+    "name": "CodeForces",
+    "icon": "simple-icons:codeforces",
+    "href": "https://codeforces.com/profile/samiulbasirfahim"
+  }
+]
