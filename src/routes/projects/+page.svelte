@@ -7,7 +7,13 @@
     const { data } = $props();
     let projects = $state(data.projects);
     let selected: string[] = $state([]);
-    let techs = $derived([...new Set(projects.flatMap((pr) => pr.tech))]);
+    let techs = [...new Set(projects.flatMap((pr) => pr.tech))];
+    let sortedTechs = $derived.by(() => {
+        return [
+            ...techs.filter((t) => selected.includes(t)),
+            ...techs.filter((t) => !selected.includes(t)),
+        ];
+    });
 
     let container: HTMLDivElement;
     let indicator = $state({
@@ -97,7 +103,7 @@
             class="whitespace-nowrap cursor-grab active:cursor-grabbing overflow-x-auto py-4"
         >
             <div>
-                {#each techs as tech (tech)}
+                {#each sortedTechs as tech (tech)}
                     {#if selected.indexOf(tech) < 0}
                         <button
                             class="bg-teal-400/5 px-1 mx-1 rounded-xs text-nowrap cursor-grab active:cursor-grabbing"
@@ -126,9 +132,7 @@
             </span>
         {/if}
     </div>
-    <div
-        class="grid grid-cols1 md:grid-cols-2 gap-4 justify-center items-center justify-items-center"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         {#each filteredProjects as project (project.title)}
             <Project {project} {handleClicker} {selected} />
         {/each}

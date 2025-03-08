@@ -13,7 +13,7 @@
         axis: "y",
         duration: 500,
     }}
-    class="bg-gray-900/80 rounded-xs shadow-md overflow-hidden h-100 flex flex-col justify-between w-full"
+    class="bg-gray-900/85 rounded-xs shadow-md overflow-hidden h-100 flex flex-col justify-between w-full relative isolate"
     {...rest}
 >
     <img
@@ -30,14 +30,14 @@
         {#each project.tech as tech (tech)}
             {#if selected.indexOf(tech) < 0}
                 <button
-                    class="bg-teal-400/5 px-1 mx-1 rounded-xs text-nowrap cursor-pointer"
+                    class="bg-teal-400/5 px-1 rounded-xs text-nowrap cursor-pointer z-10"
                     onclick={() => {
                         handleClicker(tech);
                     }}>{tech}</button
                 >
             {:else}
                 <button
-                    class="bg-teal-400 px-1 mx-1 rounded-xs text-nowrap cursor-pointer"
+                    class="bg-teal-400 px-1 rounded-xs text-nowrap cursor-pointer z-10"
                     onclick={() => {
                         handleClicker(tech);
                     }}>{tech}</button
@@ -50,12 +50,22 @@
         <a
             href={project.live}
             target="_blank"
-            class="text-blue-500 hover:underline text-sm">Live Site</a
+            class="text-teal-400 hover:underline text-sm hover:text-blue-500"
         >
+            <span
+                class="absolute left-0 top-0 w-1/2 h-full hover:bg-pink-400/5 z-5"
+            ></span>
+            Live Site
+        </a>
         <a
             href={project.source}
             target="_blank"
-            class="text-blue-500 hover:underline text-sm">Source Code</a
+            class="text-teal-400 hover:underline hover:text-blue-500 text-sm"
+        >
+            <span
+                class="absolute right-0 top-0 w-1/2 h-full hover:bg-pink-400/5 z-5"
+            ></span>
+            Source Code</a
         >
     </div>
 </div>
