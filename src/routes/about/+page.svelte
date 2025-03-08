@@ -46,9 +46,9 @@
                 <ul class="grid md:grid-cols-2 grid-cols-1 gap-4">
                     {#each skillset as { name, icon } ([name, icon])}
                         <li
-                            class="flex py-4 px-3 rounded-sm items-center gap-2 hover:bg-teal-400/20 bg-teal-400/10"
+                            class="flex py-4 px-3 rounded-sm items-center gap-2 hover:bg-teal-400/20 bg-teal-400/10 cursor-default"
                         >
-                            <Icon {icon} font-size="22" class="text-cyan-400"/>
+                            <Icon {icon} font-size="22" class="text-cyan-400" />
                             <p class="text-">{name}</p>
                         </li>
                     {/each}
@@ -62,7 +62,7 @@
         <ul class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {#each data.links as { name, icon, href } (href)}
                 <li
-                    class="flex p-2 rounded-sm items-center gap-2 hover:bg-teal-400/20 relative bg-teal-400/10"
+                    class="flex px-3 py-2 rounded-sm items-center gap-2 hover:bg-teal-400/20 relative bg-teal-400/10"
                 >
                     <Icon {icon} font-size="26" />
                     <div class="">

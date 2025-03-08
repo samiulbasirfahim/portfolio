@@ -1,0 +1,104 @@
+[
+    {
+        "title": "Portfolio Website",
+        "description": "A minimal and modern portfolio website built with SvelteKit and TailwindCSS.",
+        "image": "https://placehold.co/600x400",
+        "live": "https://portfolio.example.com",
+        "source": "https://github.com/username/portfolio",
+        "tech": [
+            "SvelteKit",
+            "TailwindCSS",
+            "Bun",
+            "TypeScript",
+            "Vite"
+        ]
+    },
+    {
+        "title": "Blog CMS",
+        "description": "A simple and efficient",
+        "image": "https://placehold.co/600x400",
+        "live": "https://blogcms.example.com",
+        "source": "https://github.com/username/blog-cms",
+        "tech": [
+            "Next.js",
+            "MongoDB"
+        ]
+    },
+    {
+        "title": "Task Manager API",
+        "description": "A backend API for managing tasks, built using Hono and Bun, with MongoDB for storage.",
+        "image": "https://placehold.co/600x400",
+        "live": "https://taskmanager.example.com",
+        "source": "https://github.com/username/task-manager-api",
+        "tech": [
+            "Hono",
+            "Bun",
+            "MongoDB",
+            "Mongoose",
+            "Redis",
+            "Zod",
+            "tRPC"
+        ]
+    },
+    {
+        "title": "E-commerce Platform",
+        "description": "A fully functional e-commerce platform with authentication and payment integration.",
+        "image": "https://placehold.co/600x400",
+        "live": "https://ecommerce.example.com",
+        "source": "https://github.com/username/ecommerce-platform",
+        "tech": [
+            "Next.js",
+            "TailwindCSS",
+            "MongoDB",
+            "Stripe",
+            "GraphQL",
+            "Apollo Client",
+            "TypeScript"
+        ]
+    },
+    {
+        "title": "Codeforces Stats Tracker",
+        "description": "A web app to track Codeforces user statistics and ratings, built with SvelteKit and Rust on the backend.",
+        "image": "https://placehold.co/600x400",
+        "live": "https://cftracker.example.com",
+        "source": "https://github.com/username/cf-tracker",
+        "tech": [
+            "SvelteKit",
+            "Rust",
+            "TailwindCSS",
+            "MongoDB",
+            "WebAssembly",
+            "D3.js"
+        ]
+    },
+    {
+        "title": "AI Chatbot",
+        "description": "An AI-powered chatbot built with OpenAI API, Next.js, and TailwindCSS.",
+        "image": "https://placehold.co/600x400",
+        "live": "https://chatbot.example.com",
+        "source": "https://github.com/username/ai-chatbot",
+        "tech": [
+            "Next.js",
+            "TailwindCSS",
+            "OpenAI API",
+            "TypeScript",
+            "Redis",
+            "WebSockets"
+        ]
+    },
+    {
+        "title": "DevOps Dashboard",
+        "description": "A dashboard for monitoring server performance, built with React, Node.js, and Docker.",
+        "image": "https://placehold.co/600x400",
+        "live": "https://devopsdashboard.example.com",
+        "source": "https://github.com/username/devops-dashboard",
+        "tech": [
+            "React",
+            "Node.js",
+            "Docker",
+            "Kubernetes",
+            "Prometheus",
+            "Grafana"
+        ]
+    }
+]

@@ -37,7 +37,7 @@
 
 <header
     class="fixed top-0 backdrop-blur-sm w-full debug-border z-[9999]
-        {scrolled ? 'bg-gray-900/80' : 'bg-transparent'}"
+        {scrolled ? 'bg-gray-900/95' : 'bg-transparent'}"
 >
     <div class="py-5 flex items-center justify-between container debug-border">
         <div>

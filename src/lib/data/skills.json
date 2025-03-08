@@ -1,76 +1,93 @@
 {
     "frontend": [
         {
-            "name": "React.js   (80%)",
-            "icon": "mdi:react"
+            "name": "React.js",
+            "icon": "mdi:react",
+            "expertise": 80
         },
         {
-            "name": "Next.js    (60%)",
-            "icon": "ri:nextjs-line"
+            "name": "Next.js",
+            "icon": "ri:nextjs-line",
+            "expertise": 60
         },
         {
-            "name": "SvelteKit      (90%)",
-            "icon": "ri:svelte-line"
+            "name": "SvelteKit",
+            "icon": "ri:svelte-line",
+            "expertise": 90
         },
         {
-            "name": "TailwindCSS    (100%)",
-            "icon": "ri:tailwind-css-line"
+            "name": "TailwindCSS",
+            "icon": "ri:tailwind-css-line",
+            "expertise": 100
         }
     ],
     "backend": [
         {
-            "name": "Node.js    (90%)",
-            "icon": "ri:nodejs-line"
+            "name": "Node.js",
+            "icon": "ri:nodejs-line",
+            "expertise": 90
         },
         {
-            "name": "Bun    (60%)",
-            "icon": "simple-icons:bun"
+            "name": "Bun",
+            "icon": "simple-icons:bun",
+            "expertise": 60
         },
         {
-            "name": "Express.js     (90%)",
-            "icon": "simple-icons:express"
+            "name": "Express.js",
+            "icon": "simple-icons:express",
+            "expertise": 90
         },
         {
-            "name": "Hono   (60%)",
-            "icon": "simple-icons:hono"
+            "name": "Hono",
+            "icon": "simple-icons:hono",
+            "expertise": 60
         },
         {
             "name": "MongoDB",
-            "icon": "devicon-plain:mongodb"
+            "icon": "devicon-plain:mongodb",
+            "expertise": null
         },
         {
-            "name": "Mongoose   (80%)",
-            "icon": "simple-icons:mongoose"
+            "name": "Mongoose",
+            "icon": "simple-icons:mongoose",
+            "expertise": 80
         },
         {
-            "name": "Prisma     (60%)",
-            "icon": "tabler:brand-prisma"
+            "name": "Prisma",
+            "icon": "tabler:brand-prisma",
+            "expertise": 60
         }
     ],
     "languages": [
         {
-            "name": "C      (90%)",
-            "icon": "mdi:language-c"
+            "name": "C",
+            "icon": "mdi:language-c",
+            "expertise": 90
         },
         {
-            "name": "C++    (70%)",
-            "icon": "mdi:language-cpp"
+            "name": "C++",
+            "icon": "mdi:language-cpp",
+            "expertise": 70
         },
         {
-            "name": "Rust   (70%)",
-            "icon": "mdi:language-rust"
+            "name": "Rust",
+            "icon": "mdi:language-rust",
+            "expertise": 70
         },
         {
-            "name": "JavaScript    (90%)",
-            "icon": "mdi:language-javascript"
+            "name": "JavaScript",
+            "icon": "mdi:language-javascript",
+            "expertise": 90
         },
         {
-            "name": "TypeScript    (90%)",
-            "icon": "mdi:language-typescript"
+            "name": "TypeScript",
+            "icon": "mdi:language-typescript",
+            "expertise": 90
         },
         {
             "name": "Python",
-            "icon": "mdi:language-python"
+            "icon": "mdi:language-python",
+            "expertise": null
         }
     ]
 }
