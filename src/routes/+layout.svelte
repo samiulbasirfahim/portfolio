@@ -9,7 +9,7 @@
     });
 </script>
 
-<main class="pt-20">
+<main class="pt-[60px]">
     <Navbar />
     {@render children()}
 </main>

@@ -5,8 +5,8 @@
 </script>
 
 <main>
-    <div class="hidden sm:block">
+    <div class="hidden sm:flex container justify-start items-start">
         <Bar />
+        {@render children()}
     </div>
-    {@render children()}
 </main>
