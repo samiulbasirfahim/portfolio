@@ -4,7 +4,7 @@
     let { children } = $props();
 </script>
 
-<main>
+<main class="pt-20">
     <Navbar />
     {@render children()}
 </main>

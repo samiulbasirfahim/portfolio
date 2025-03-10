@@ -14,7 +14,7 @@
                 >
                     {#each skills as { icon, title, description } (title)}
                         <div
-                            class="border-1 border-primary/20 p-4 space-y-2 rounded-xl"
+                            class="border-1 border-primary/20 p-4 space-y-2 rounded-sm"
                         >
                             <Icon {icon} font-size="28" />
                             <h4 class="">
