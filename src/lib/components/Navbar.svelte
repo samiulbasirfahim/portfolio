@@ -11,16 +11,12 @@
         hidden: true,
         toggle() {
             this.hidden = !this.hidden;
-            console.log();
         },
     });
 
-    function special_case() {
-        if (page.route.id) {
-            return page.route.id.split("/")[1] === "projects";
-        }
-        return false;
-    }
+    const special_case = () => {
+        return page.route.id && page.route.id.split("/")[1] === "projects";
+    };
 </script>
 
 {#snippet nav_item(title: string, href: string)}
@@ -56,7 +52,7 @@
                     duration: 200,
                 }}
                 onclickcapture={() => sidebar.toggle()}
-                class="h-screen w-screen fixed inset-0 bg-background/20 backdrop-blur-sm"
+                class="h-screen w-screen fixed inset-0 bg-background/20 backdrop-blur-sm sm:hidden"
             ></div>
         {/if}
 

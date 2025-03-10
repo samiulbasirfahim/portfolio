@@ -24,14 +24,14 @@
                 sidebar.hidden = true;
             }
         }}
-        class="border-s-2 ps-4 py-1 sm:py-0 {page.url.pathname === href
+        class="border-s-2 ps-4 py-1 {page.url.pathname === href
             ? 'border-primary/100'
             : 'border-primary/20 hover:border-primary/50'}"
         {href}>{title}</a
     >
 {/snippet}
 
-<main class="flex flex-col overflow-x-scroll items-start max-w-xl py-6">
+<main class="flex flex-col overflow-x-scroll items-start max-w-xl py-2">
     {#each navbarLinks as link}
         {@render nav_item(link.title, link.href)}
     {/each}
