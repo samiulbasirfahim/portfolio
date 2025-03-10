@@ -1,1 +1,84 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+    --color-foreground: var(--theme-color-foreground);
+    --color-background: var(--theme-color-background);
+    --color-primary: var(--theme-color-primary);
+    --color-secondary: var(--theme-color-secondary);
+    --color-accent: var(--theme-color-accent);
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+    [data-theme="light"] {
+        --theme-color-foreground: hsl(340, 10%, 6%);
+        --theme-color-background: hsl(0, 9%, 98%);
+        --theme-color-primary: hsl(342, 15%, 55%);
+        --theme-color-secondary: hsl(343, 17%, 72%);
+        --theme-color-accent: hsl(342, 21%, 61%);
+    }
+
+    [data-theme="dark"] {
+        --theme-color-foreground: hsl(340, 10%, 94%);
+        --theme-color-background: hsl(0, 9%, 2%);
+        --theme-color-primary: hsl(342, 15%, 45%);
+        --theme-color-secondary: hsl(343, 17%, 28%);
+        --theme-color-accent: hsl(342, 21%, 39%);
+    }
+}
+
+body {
+    @apply bg-background text-foreground font-sans;
+}
+
+h1 {
+    @apply text-4xl font-semibold;
+}
+
+h2 {
+    @apply text-3xl font-semibold;
+}
+
+h3 {
+    @apply text-2xl font-semibold;
+}
+
+h4 {
+    @apply text-xl font-semibold;
+}
+
+@layer utilities {
+    .container {
+        max-width: 800px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: 640px) {
+        .container {
+            max-width: 600px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 800px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            max-width: 960px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container {
+            max-width: 1080px;
+        }
+    }
+}
