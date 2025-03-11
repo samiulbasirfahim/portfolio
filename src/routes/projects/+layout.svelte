@@ -1,12 +1,14 @@
 <script lang="ts">
-    import Bar from "$lib/components/projects/Bar.svelte";
+	import Bar from '$lib/components/projects/Bar.svelte';
 
-    const { children } = $props();
+	const { children } = $props();
 </script>
 
-<main>
-    <div class="hidden sm:flex container justify-start items-start">
-        <Bar />
-        {@render children()}
-    </div>
+<main class="container flex">
+	<div class="hidden w-1/4 sm:block">
+		<Bar />
+	</div>
+	<div class="max-w-3/4">
+		{@render children()}
+	</div>
 </main>

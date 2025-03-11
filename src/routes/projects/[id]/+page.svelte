@@ -1,16 +1,13 @@
 <script lang="ts">
-	import { marked } from 'marked';
-
-	let htmlContent = marked(
-		`
-# H1
-## H2
-### H3
-                                                        `,
-		{ async: false }
-	);
+	const { data } = $props();
 </script>
 
-<div>
-	{@html htmlContent}
+<div class="markdown">
+	{#await data.htmlContent}
+		<p>Fetching data</p>
+	{:then content}
+		{@html content}
+	{:catch error}
+		<p>{error}</p>
+	{/await}
 </div>

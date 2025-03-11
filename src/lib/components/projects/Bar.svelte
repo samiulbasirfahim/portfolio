@@ -1,44 +1,44 @@
 <script lang="ts">
-    import { page } from "$app/state";
+	import { page } from '$app/state';
 
-    let { sidebar = $bindable() } = $props();
+	let { sidebar = $bindable() } = $props();
 
-    const projects = [
-        { title: "Portfolio Website", slug: "portfolio" },
-        { title: "Blog CMS", slug: "blog-cms" },
-        { title: "Task Manager API", slug: "task-manager" },
-        { title: "E-commerce Platform", slug: "ecommerce" },
-        { title: "Codeforces Stats Tracker", slug: "cf-tracker" },
-    ];
+	const projects = [
+		{ title: 'Portfolio Website', slug: 'portfolio' },
+		{ title: 'Blog CMS', slug: 'blog-cms' },
+		{ title: 'Task Manager API', slug: 'task-manager' },
+		{ title: 'E-commerce Platform', slug: 'ecommerce' },
+		{ title: 'Codeforces Stats Tracker', slug: 'cf-tracker' }
+	];
 
-    const navbarLinks = projects.map((project) => ({
-        title: project.title,
-        href: `/projects/${project.slug}`,
-    }));
+	const navbarLinks = projects.map((project) => ({
+		title: project.title,
+		href: `/projects/${project.slug}`
+	}));
 </script>
 
 {#snippet nav_item(title: string, href: string)}
-    <a
-        onclickcapture={() => {
-            if (sidebar) {
-                sidebar.hidden = true;
-            }
-        }}
-        class="border-s-2 ps-4 py-1 {page.url.pathname === href
-            ? 'border-primary/100'
-            : 'border-primary/20 hover:border-primary/50'}"
-        {href}>{title}</a
-    >
+	<a
+		onclickcapture={() => {
+			if (sidebar) {
+				sidebar.hidden = true;
+			}
+		}}
+		class="border-s-2 py-1 ps-4 text-sm {page.url.pathname === href
+			? 'border-primary/100 font-semibold '
+			: 'border-primary/20 hover:border-primary/50 font-light'}"
+		{href}>{title}</a
+	>
 {/snippet}
 
-<main class="flex flex-col overflow-x-scroll items-start max-w-xl py-2">
-    {#each navbarLinks as link}
-        {@render nav_item(link.title, link.href)}
-    {/each}
+<main class="flex max-w-xl flex-col items-start overflow-x-scroll py-2 ps-4 sm:ps-0">
+	{#each navbarLinks as link}
+		{@render nav_item(link.title, link.href)}
+	{/each}
 </main>
 
 <style>
-    main {
-        height: calc(100vh - 60px);
-    }
+	main {
+		height: calc(100vh - 60px);
+	}
 </style>
