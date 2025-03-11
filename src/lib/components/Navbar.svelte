@@ -58,7 +58,7 @@
 
         <a class="text-xl font-semibold" href="/">FAHIM</a>
         <ul
-            class="text-sm sm:text-base sm:gap-8 flex sm:h-auto fixed sm:static top-0 sm:justify-end w-2/3 sm:w-auto bg-background sm:bg-transparent transition-all h-screen overflow-scroll {sidebar.hidden
+            class="text-sm sm:text-base sm:gap-8 flex sm:h-auto fixed sm:static top-0 sm:justify-end w-2/3 sm:w-auto bg-background sm:bg-transparent transition-all h-screen overflow-scroll sm:overflow-auto {sidebar.hidden
                 ? 'left-[-100%]'
                 : 'left-0'}
                 {special_case()

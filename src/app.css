@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
@@ -12,7 +14,7 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer base {
-    [data-theme="light"] {
+    [data-theme='light'] {
         --theme-color-foreground: hsl(340, 10%, 6%);
         --theme-color-background: hsl(0, 9%, 98%);
         --theme-color-primary: hsl(342, 15%, 55%);
@@ -20,7 +22,7 @@
         --theme-color-accent: hsl(342, 21%, 61%);
     }
 
-    [data-theme="dark"] {
+    [data-theme='dark'] {
         --theme-color-foreground: hsl(340, 10%, 94%);
         --theme-color-background: hsl(0, 9%, 2%);
         --theme-color-primary: hsl(342, 15%, 45%);
