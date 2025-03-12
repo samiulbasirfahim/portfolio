@@ -1,4 +1,4 @@
-export interface Skill {
-	title: string;
-	slug: string;
+export interface Project {
+    title: string;
+    slug: string;
 }

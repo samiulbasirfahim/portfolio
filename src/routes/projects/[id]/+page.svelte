@@ -8,6 +8,8 @@
 	{:then content}
 		{@html content}
 	{:catch error}
-		<p>{error}</p>
+		<div class="flex h-full w-full items-center justify-center">
+			<p class="text-center">{error}</p>
+		</div>
 	{/await}
 </div>

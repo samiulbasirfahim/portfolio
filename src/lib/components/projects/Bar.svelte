@@ -1,15 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { projects } from '$lib/projects';
 
 	let { sidebar = $bindable() } = $props();
-
-	const projects = [
-		{ title: 'Portfolio Website', slug: 'portfolio' },
-		{ title: 'Blog CMS', slug: 'blog-cms' },
-		{ title: 'Task Manager API', slug: 'task-manager' },
-		{ title: 'E-commerce Platform', slug: 'ecommerce' },
-		{ title: 'Codeforces Stats Tracker', slug: 'cf-tracker' }
-	];
 
 	const navbarLinks = projects.map((project) => ({
 		title: project.title,
@@ -31,14 +24,8 @@
 	>
 {/snippet}
 
-<main class="flex max-w-xl flex-col items-start overflow-x-scroll py-2 ps-4 sm:ps-0">
+<main class="flex max-w-xl flex-col items-start py-2 ps-4">
 	{#each navbarLinks as link}
 		{@render nav_item(link.title, link.href)}
 	{/each}
 </main>
-
-<style>
-	main {
-		height: calc(100vh - 60px);
-	}
-</style>

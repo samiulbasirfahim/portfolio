@@ -9,7 +9,7 @@
 		{#each skillset as { title, skills } (title)}
 			<div>
 				<h2 class="mb-2">{title}</h2>
-				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+				<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 					{#each skills as { icon, title, description } (title)}
 						<div class="border-primary/20 space-y-2 rounded-sm border-1 p-4">
 							<Icon {icon} font-size="28" />
