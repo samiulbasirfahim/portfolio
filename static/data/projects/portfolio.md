@@ -1,71 +1,31 @@
-# Markdown syntax guide
+# My Portfolio Website
 
-## Headers
+## Overview
 
-# This is a Heading h1
+This is my personal portfolio website, built using **SvelteKit**, **Bun**, and **TailwindCSS**. It showcases my skills, projects, and experience in web development and problem-solving.
 
-## This is a Heading h2
+## Tech Stack
 
-###### This is a Heading h6
+- **Framework:** SvelteKit
+- **Runtime:** Bun
+- **Styling:** TailwindCSS
 
-## Emphasis
+## Features
 
-_This text will be italic_  
-_This will also be italic_
+- **Minimal and Fast:** Optimized performance with Bun and SvelteKit.
+- **Projects Showcase:** A dedicated project page where markdown files are rendered as project descriptions.
+- **Dark Mode Support:** Seamless light and dark mode integration.
+- **Fully Responsive:** Designed to work across all devices.
 
-**This text will be bold**  
-**This will also be bold**
+## Why SvelteKit & Bun?
 
-_You **can** combine them_
+- **SvelteKit:** Provides a lightweight and reactive UI with excellent performance.
+- **Bun:** Faster runtime compared to Node.js, improving server-side performance.
 
-## Lists
+## Future Improvements
 
-### Unordered
+- Adding animations and micro-interactions for better UX.
+- Implementing a blog section to share my learnings.
+- SEO optimizations for better discoverability.
 
-- Item 1
-- Item 2
-- Item 2a
-- Item 2b
-  - Item 3a
-  - Item 3b
-
-### Ordered
-
-1. Item 1
-2. Item 2
-3. Item 3
-   1. Item 3a
-   2. Item 3b
-
-## Images
-
-![This is an alt text.](https://markdownlivepreview.com/image/sample.webp 'This is a sample image.')
-
-## Links
-
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
-
-## Blockquotes
-
-> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
->
-> > Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-
-## Tables
-
-| Left columns | Right columns |
-| ------------ | :-----------: |
-| left foo     |   right foo   |
-| left bar     |   right bar   |
-| left baz     |   right baz   |
-
-## Blocks of code
-
-```
-let message = 'Hello world';
-alert(message);
-```
-
-## Inline code
-
-This web site is using `markedjs/marked`.
+Check out my [portfolio](https://samiulbasirfahim.vercel.app) to explore my work! 🚀

@@ -24,7 +24,7 @@
 	>
 {/snippet}
 
-<main class="flex max-w-xl flex-col items-start py-2 ps-4">
+<main class="flex max-w-xl flex-col items-start py-2 ps-4 sm:ps-0">
 	{#each navbarLinks as link}
 		{@render nav_item(link.title, link.href)}
 	{/each}
