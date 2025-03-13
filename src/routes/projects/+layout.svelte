@@ -4,12 +4,12 @@
 	const { children } = $props();
 </script>
 
-<main class="container flex">
-	<div class="sidebar scrollbar-thin sticky top-[60px] hidden w-1/4 overflow-y-auto md:block">
-		<Bar />
-	</div>
-	<div class="max-w-3/4 p-4">
+<main class="flex">
+	<div class="max-w-4/5">
 		{@render children()}
+	</div>
+	<div class="sidebar scrollbar-thin sticky top-[60px] hidden w-1/5 overflow-y-auto md:block">
+		<Bar />
 	</div>
 </main>
 

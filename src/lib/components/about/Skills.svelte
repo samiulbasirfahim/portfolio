@@ -3,7 +3,7 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<main class="container">
+<main class="">
 	<h1 class="">Skills</h1>
 	<div class="mt-6 space-y-6">
 		{#each skillset as { title, skills } (title)}

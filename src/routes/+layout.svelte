@@ -13,5 +13,7 @@
 
 <main class="pt-[60px]">
 	<Navbar />
-	{@render children()}
+	<div class="container">
+		{@render children()}
+	</div>
 </main>
