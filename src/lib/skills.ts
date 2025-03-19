@@ -94,6 +94,12 @@ export const skillset: SkillsCategory[] = [
         title: 'Databases',
         skills: [
             {
+                title: 'SQL - MariaDB, SQLITE',
+                description:
+                    'A standard language for managing and querying relational databases, including commands like SELECT, INSERT, UPDATE, and DELETE.',
+                icon: 'devicon:mysql'
+            },
+            {
                 title: 'MongoDB',
                 description: 'A NoSQL database that stores data in flexible, JSON-like document format.',
                 icon: 'logos:mongodb-icon'

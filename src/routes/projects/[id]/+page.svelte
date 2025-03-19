@@ -2,9 +2,9 @@
 	const { data } = $props();
 </script>
 
-<div class="markdown space-y-4 pb-6">
+<div class="markdown w-full space-y-4 pb-6">
 	{#await data.htmlContent}
-		<p>Fetching data</p>
+		<div class="">Fetching data</div>
 	{:then content}
 		{@html content}
 	{:catch error}

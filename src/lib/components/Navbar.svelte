@@ -52,9 +52,9 @@
 
 		<a class="text-xl font-semibold" href="/">FAHIM</a>
 		<ul
-			class="bg-background scrollbar-thin fixed top-[60px] inset-0 flex w-2/3 overflow-y-auto text-sm transition-all md:static md:h-auto md:w-auto md:justify-end md:gap-8 md:bg-transparent md:text-base {sidebar.hidden
-				? 'left-[-100%]'
-				: 'left-0'}
+			class="bg-background scrollbar-thin shadow-background fixed inset-0 top-[60px] flex w-2/3 overflow-y-auto text-sm shadow-2xl transition-all md:static md:h-auto
+            md:w-auto md:justify-end md:gap-8 md:bg-transparent md:text-base md:shadow-none
+            {sidebar.hidden ? 'left-[-100%]' : 'left-0'}
                 {special_case()
 				? 'items-start justify-start md:pt-0'
 				: 'items-center justify-center '}"

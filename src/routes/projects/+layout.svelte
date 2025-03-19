@@ -4,7 +4,7 @@
 	const { children } = $props();
 </script>
 
-<main class="flex">
+<main class="flex justify-between">
 	<div class="max-w-4/5">
 		{@render children()}
 	</div>
