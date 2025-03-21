@@ -26,6 +26,8 @@ A personal portfolio website designed to showcase my skills, projects, and exper
 - Implementing a blog section to share my learnings and insights.
 - Optimizing SEO for better discoverability.
 
-[Source Code](https://github.com/samiulbasirfahim/portfolio)
-
 Check out my [portfolio](https://samiulbasirfahim.vercel.app) to explore my work! 🚀
+
+## Source Code
+
+Check out the project on <a href="https://github.com/samiulbasirfahim/portfolio" target="_blank">GitHub</a>.

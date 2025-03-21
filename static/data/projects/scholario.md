@@ -37,6 +37,8 @@ A comprehensive and efficient school management system built using **SvelteKit**
 - Implementing role-based access control (RBAC) for better security.
 - Enhancing UI with animations for a smoother experience.
 
-[Source Code](https://github.com/samiulbasirfahim/scholario)
-
 This application is designed to make school management seamless and efficient! 🚀
+
+## Source Code
+
+Check out the project on <a href="https://github.com/samiulbasirfahim/scholario" target="_blank">GitHub</a>.
