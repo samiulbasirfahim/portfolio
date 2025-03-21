@@ -17,7 +17,7 @@
 				sidebar.hidden = true;
 			}
 		}}
-		class="border-s-2 py-1 ps-4 text-sm {page.url.pathname === href
+		class="border-s-2 py-1.5 ps-4 text-sm {page.url.pathname === href
 			? 'border-primary/100 font-semibold '
 			: 'border-primary/20 hover:border-primary/50 font-light'}"
 		{href}>{title}</a

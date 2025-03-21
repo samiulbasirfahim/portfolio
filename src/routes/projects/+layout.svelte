@@ -5,11 +5,12 @@
 </script>
 
 <main class="flex justify-between">
-	<div class="max-w-4/5">
-		{@render children()}
-	</div>
 	<div class="sidebar scrollbar-thin sticky top-[60px] hidden w-1/5 overflow-y-auto md:block">
 		<Bar />
+	</div>
+
+	<div class="max-w-4/5">
+		{@render children()}
 	</div>
 </main>
 

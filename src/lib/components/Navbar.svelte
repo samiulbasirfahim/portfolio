@@ -22,7 +22,7 @@
 {#snippet nav_item(title: string, href: string)}
 	<a
 		onclickcapture={() => (sidebar.hidden = true)}
-		class=" ms-4 border-s-2 py-1.5 ps-4 md:border-s-0 md:py-0 {page.url.pathname.split('/')[1] ===
+		class="ms-4 border-s-2 py-1.5 ps-4 md:border-s-0 md:py-0 {page.url.pathname.split('/')[1] ===
 		href.split('/')[1]
 			? 'border-primary/100 font-semibold'
 			: 'border-primary/20 hover:border-primary/50 font-light'}"
