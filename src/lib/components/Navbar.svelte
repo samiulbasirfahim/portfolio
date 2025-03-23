@@ -22,15 +22,16 @@
 {#snippet nav_item(title: string, href: string)}
 	<a
 		onclickcapture={() => (sidebar.hidden = true)}
-		class="ms-4 border-s-2 py-1.5 ps-4 md:border-s-0 md:py-0 {page.url.pathname.split('/')[1] ===
-		href.split('/')[1]
-			? 'border-primary/100 font-semibold'
-			: 'border-primary/20 hover:border-primary/50 font-light'}"
+		class="ms-4 border-s-2 py-1.5 ps-4 font-semibold md:border-s-0 md:py-0 {page.url.pathname.split(
+			'/'
+		)[1] === href.split('/')[1]
+			? 'border-primary/100 font-semibold opacity-100'
+			: 'border-primary/20 hover:border-primary/50 opacity-60'}"
 		{href}>{title}</a
 	>
 {/snippet}
 
-<header class="border-primary/20 bg-background fixed top-0 w-full border-b-1 py-4">
+<header class="border-primary/20 fixed top-0 w-full border-b-1 py-4 bg-background z-50">
 	<nav class="container flex items-center justify-between">
 		<button onclick={() => sidebar.toggle()} class="z-[99] cursor-pointer md:hidden">
 			{#if sidebar.hidden}
@@ -68,11 +69,11 @@
 					class="border-primary/20 ms-4 cursor-pointer border-s-2 py-1.5 ps-4 md:border-s-3 md:py-0"
 				>
 					{#if theme.theme === 'light'}
-						<Icon icon="line-md:moon-filled-alt-to-sunny-filled-loop-transition" font-size="28" />
+						<Icon icon="line-md:moon-filled-alt-to-sunny-filled-loop-transition" font-size="24" />
 					{:else}
 						<Icon
 							icon="line-md:sunny-filled-loop-to-moon-filled-alt-loop-transition"
-							font-size="28"
+							font-size="24"
 						/>
 					{/if}
 				</button>

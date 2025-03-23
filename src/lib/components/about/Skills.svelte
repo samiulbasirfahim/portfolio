@@ -13,10 +13,10 @@
 					{#each skills as { icon, title, description } (title)}
 						<div class="border-primary/20 space-y-2 rounded-sm border-1 p-4">
 							<Icon {icon} font-size="28" />
-							<h4 class="">
+							<h4 class="text-base">
 								{title}
 							</h4>
-							<small class="text-sm">{description}</small>
+							<small class="text-xs opacity-80">{description}</small>
 						</div>
 					{/each}
 				</div>

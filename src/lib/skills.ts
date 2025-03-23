@@ -5,6 +5,13 @@ export const skillset: SkillsCategory[] = [
 		title: 'Languages',
 		skills: [
 			{
+				title: 'Rust',
+				description:
+					'A systems programming language focused on safety, speed, and memory management.',
+				icon: 'vscode-icons:file-type-rust'
+			},
+
+			{
 				title: 'JavaScript',
 				description: 'A popular language for building interactive websites and web applications.',
 				icon: 'logos:javascript'
@@ -27,11 +34,16 @@ export const skillset: SkillsCategory[] = [
 					'An extension of C, adding object-oriented features for large applications and performance.',
 				icon: 'logos:c-plusplus'
 			},
+
 			{
-				title: 'Rust',
-				description:
-					'A systems programming language focused on safety, speed, and memory management.',
-				icon: 'vscode-icons:file-type-rust'
+				title: 'Bash',
+				description: 'A command-line tool for Linux that lets you run commands and scripts easily.',
+				icon: 'logos:bash-icon'
+			},
+			{
+				title: 'SQL',
+				description: 'A language for managing and querying databases, organizing data like a pro.',
+				icon: 'oui:vis-query-sql'
 			}
 		]
 	},
@@ -39,22 +51,16 @@ export const skillset: SkillsCategory[] = [
 		title: 'Frameworks',
 		skills: [
 			{
-				title: 'React.js',
+				title: 'React & Next.js',
 				description:
-					'A JavaScript library for building user interfaces with reusable components and state management.',
+					'A JavaScript library and framework combo for building fast web apps with reusable parts and server-side tricks.',
 				icon: 'logos:react'
 			},
 			{
-				title: 'SvelteKit',
+				title: 'Svelte & SvelteKit',
 				description:
-					'A framework for building fast web apps with minimal setup and optimized performance.',
+					'A JavaScript tool and framework duo for creating fast, simple web apps with easy setup.',
 				icon: 'logos:svelte-icon'
-			},
-			{
-				title: 'Next.js',
-				description:
-					'A framework for building React applications with server-side rendering and static site generation.',
-				icon: 'logos:nextjs-icon'
 			},
 			{
 				title: 'Tauri',
@@ -94,9 +100,8 @@ export const skillset: SkillsCategory[] = [
 		title: 'Databases',
 		skills: [
 			{
-				title: 'SQL - MariaDB, SQLITE',
-				description:
-					'A standard language for managing and querying relational databases, including commands like SELECT, INSERT, UPDATE, and DELETE.',
+				title: 'MariaDB, SQLITE',
+				description: 'SQL based database',
 				icon: 'devicon:mysql'
 			},
 			{

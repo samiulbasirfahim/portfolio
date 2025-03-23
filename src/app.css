@@ -58,6 +58,14 @@ h4 {
     position: relative;
 }
 
+.markdown ul {
+    @apply space-y-1;
+}
+
+.markdown {
+    @apply space-y-3;
+}
+
 .markdown a::after {
     content: '';
     position: absolute;
