@@ -2,7 +2,7 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<main class="bg-background border-primary/20 w-screen border-t-1">
+<main class="bg-background border-primary/20  border-t-1">
 	<div class=" container flex flex-col items-center justify-between gap-y-8 py-10 md:flex-row">
 		<div class="flex items-center gap-2">
 			<Icon icon="material-symbols:copyright" font-size="22" />

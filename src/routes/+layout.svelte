@@ -8,7 +8,7 @@
 	onMount(() => {
 		document.title = 'Samiul Basir Fahim';
 
-		document.documentElement.classList.add('scrollbar-thin');
+		// document.documentElement.classList.add('scrollbar-thin');
 	});
 </script>
 

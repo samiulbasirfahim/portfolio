@@ -5,7 +5,7 @@
 </script>
 
 <main class="flex relative">
-	<div class="sidebar scrollbar-thin sticky z-[0] top-[60px] hidden overflow-y-auto md:block md:w-1/5">
+	<div class="sidebar sticky z-[0] top-[60px] hidden overflow-y-auto md:block md:w-1/5">
 		<Bar />
 	</div>
 

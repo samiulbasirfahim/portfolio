@@ -16,7 +16,7 @@
 							<h4 class="text-base">
 								{title}
 							</h4>
-							<small class="text-xs opacity-80">{description}</small>
+							<small class="text-sm opacity-80">{description}</small>
 						</div>
 					{/each}
 				</div>
