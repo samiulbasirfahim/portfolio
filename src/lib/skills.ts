@@ -101,7 +101,7 @@ export const skillset: SkillsCategory[] = [
 		skills: [
 			{
 				title: 'MariaDB, SQLITE',
-				description: 'SQL based database',
+				description: 'SQL based databases',
 				icon: 'devicon:mysql'
 			},
 			{

@@ -17,15 +17,15 @@
 				sidebar.hidden = true;
 			}
 		}}
-		class="border-s-2 py-1.5 ps-4 text-sm font-semibold {page.url.pathname === href
-			? 'border-primary/100 opacity-100'
-			: 'border-primary/20 hover:border-primary/50 opacity-60'}"
+		class="border-s-2 ps-4 py-1.5 font-semibold {page.url.pathname === href
+			? 'border-primary/100 text-primary'
+			: 'border-primary/20 opacity-70'}"
 		{href}>{title}</a
 	>
 {/snippet}
 
-<main class="flex max-w-xl flex-col items-start py-2 ps-4 sm:ps-0">
-	{#each navbarLinks as link}
+<main class="flex max-w-xl flex-col items-start py-2 sm:ps-0">
+	{#each navbarLinks as link, i (i)}
 		{@render nav_item(link.title, link.href)}
 	{/each}
 </main>

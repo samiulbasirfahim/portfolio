@@ -4,8 +4,8 @@
 	const { children } = $props();
 </script>
 
-<main class="flex relative">
-	<div class="sidebar sticky z-[0] top-[60px] hidden overflow-y-auto md:block md:w-1/5">
+<main class="relative flex">
+	<div class="sidebar sticky top-[65px] z-[0] hidden overflow-y-auto md:block md:w-1/5">
 		<Bar />
 	</div>
 

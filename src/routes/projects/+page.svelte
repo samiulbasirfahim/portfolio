@@ -7,7 +7,3 @@
 		goto(`/projects/${projects[0].slug}`, { replaceState: true });
 	});
 </script>
-
-<main>
-	<p>Fetching Data</p>
-</main>

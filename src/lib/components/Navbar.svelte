@@ -22,16 +22,16 @@
 {#snippet nav_item(title: string, href: string)}
 	<a
 		onclickcapture={() => (sidebar.hidden = true)}
-		class="ms-4 border-s-2 py-1.5 ps-4 font-semibold md:border-s-0 md:py-0 {page.url.pathname.split(
+		class="border-s-2 py-1.5 ps-4 font-semibold ms-4 md:border-s-0 md:py-0 {page.url.pathname.split(
 			'/'
 		)[1] === href.split('/')[1]
-			? 'border-primary/100 font-semibold opacity-100'
-			: 'border-primary/20 hover:border-primary/50 opacity-60'}"
+			? 'border-primary/100 text-primary'
+			: 'border-primary/20 opacity-70'}"
 		{href}>{title}</a
 	>
 {/snippet}
 
-<header class="border-primary/20 fixed top-0 w-full border-b-1 py-4 bg-background z-50">
+<header class="border-primary/20 bg-background fixed top-0 z-50 w-full border-b-1 py-4">
 	<nav class="container flex items-center justify-between">
 		<button onclick={() => sidebar.toggle()} class="z-[99] cursor-pointer md:hidden">
 			{#if sidebar.hidden}
@@ -60,10 +60,10 @@
 				? 'items-start justify-start md:pt-0'
 				: 'items-center justify-center '}"
 		>
-			<div class="flex w-full flex-col md:flex-row">
-				{@render nav_item('Home', '/')}
-				{@render nav_item('Projects', '/projects')}
-				{@render nav_item('About', '/about')}
+			<div class="flex w-full flex-col md:flex-row ms-4">
+				{@render nav_item('HOME', '/')}
+				{@render nav_item('PROJECTS', '/projects')}
+				{@render nav_item('ABOUT', '/about')}
 				<button
 					onclick={() => theme.toggle()}
 					class="border-primary/20 ms-4 cursor-pointer border-s-2 py-1.5 ps-4 md:border-s-3 md:py-0"
@@ -86,6 +86,3 @@
 		</ul>
 	</nav>
 </header>
-
-<style>
-</style>
