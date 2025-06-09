@@ -11,7 +11,7 @@
 				<h4 class="mb-2">{title}</h4>
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 					{#each skills as { icon, title, description } (title)}
-						<div class="border-primary/20 space-y-2 rounded-sm border-[1.5px] p-4">
+						<div class="border-primary/20 space-y-2 rounded- border-[1.5px] p-4">
 							<Icon {icon} font-size="28" />
 							<h4 class="text-base">
 								{title}
