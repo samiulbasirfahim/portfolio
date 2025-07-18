@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useTransitionContext } from "@/components/core/PageTransition";
+import { useEffect } from "react";
 
 export default function Loading() {
-  const [showLoading, setShowLoading] = useState(true);
+  const { firstLoad, setFirstLoad } = useTransitionContext();
 
   useEffect(() => {
     const alreadyLoaded = sessionStorage.getItem("alreadyLoaded");
@@ -11,17 +12,17 @@ export default function Loading() {
     console.log("HELLO, i can run console.log from loading.tsx");
 
     if (alreadyLoaded) {
-      setShowLoading(false);
+      setFirstLoad(false);
       return;
     } else {
       sessionStorage.setItem("alreadyLoaded", "true");
     }
   }, []);
 
-  if (!showLoading) return null;
+  if (!firstLoad) return null;
 
   return (
-    showLoading && (
+    firstLoad && (
       <div className="h-screen w-screen top-0 left-0 fixed bg-black" />
     )
   );

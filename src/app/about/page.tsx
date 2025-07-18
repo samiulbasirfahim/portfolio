@@ -1,6 +1,10 @@
+import FIrstLoading from "@/components/core/FirstLoading";
 import PageContainer from "@/components/core/PageContainer";
 
-export default async function Home() {
-  await new Promise((res) => setTimeout(res, 5000));
-  return <PageContainer>Home</PageContainer>;
+export default function Home() {
+  return (
+    <PageContainer>
+      <h1 className="text-8xl font-black">ABOUT</h1>
+    </PageContainer>
+  );
 }

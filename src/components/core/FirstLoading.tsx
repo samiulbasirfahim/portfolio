@@ -1,24 +1,20 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
+import { useTransitionContext } from "./PageTransition";
 
 export default function FIrstLoading() {
-  const [loading, setLoading] = useState(true);
-  const firstLoad = useRef(true);
+  const { firstLoad, setFirstLoad } = useTransitionContext();
 
   useEffect(() => {
-    if (firstLoad.current) {
-      setTimeout(() => setLoading(false), 1000);
-      firstLoad.current = false;
-      console.log("Page loaded, and its the first load");
-    }
-  }, []);
+    setTimeout(() => setFirstLoad(false), 1000);
+  });
 
   const columnCount = 5;
   return (
     <AnimatePresence>
-      {loading && (
+      {firstLoad && (
         <motion.div className="w-screen h-screen fixed top-0 left-0 flex">
           {[...Array(columnCount)].map((_, i) => {
             const j = columnCount - i;

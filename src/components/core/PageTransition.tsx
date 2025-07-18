@@ -8,11 +8,15 @@ import { AnimatePresence, motion } from "motion/react";
 type TransitionContextType = {
   loading: boolean;
   setLoading: (loading: boolean) => void;
+  firstLoad: boolean;
+  setFirstLoad: (firstLoad: boolean) => void;
 };
 
 const TransitionContext = createContext<TransitionContextType>({
   loading: false,
   setLoading: () => {},
+  firstLoad: false,
+  setFirstLoad: () => {},
 });
 
 export const useTransitionContext = () => useContext(TransitionContext);
@@ -29,7 +33,6 @@ export function CustomLink({
 
   const currentPathname = usePathname();
 
-  // Normalize href to handle relative paths or query params
   const normalizedHref = href.startsWith("/")
     ? href.split("?")[0]
     : `/${href.split("?")[0]}`;
@@ -55,18 +58,20 @@ export default function PageTransition({
   children: React.ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
+
+  const [firstLoad, setFirstLoad] = useState(true);
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    console.log(
-      "Route change completed:",
-      `${pathname}?${searchParams}`,
-      new Date().toISOString(),
-    );
-    setTimeout(() => setLoading(false), 1000);
-  }, [pathname, searchParams]);
-
+  // useEffect(() => {
+  //   console.log(
+  //     "Route change completed:",
+  //     `${pathname}?${searchParams}`,
+  //     new Date().toISOString(),
+  //   );
+  //   setTimeout(() => setLoading(false), 1000);
+  // }, [pathname, searchParams]);
+  //
   useEffect(() => {
     console.log(`Current state for loading is ${loading}`);
   }, [loading]);
@@ -74,7 +79,9 @@ export default function PageTransition({
   const columnCount = 5;
 
   return (
-    <TransitionContext.Provider value={{ loading, setLoading }}>
+    <TransitionContext.Provider
+      value={{ loading, setLoading, firstLoad, setFirstLoad }}
+    >
       <AnimatePresence>
         {loading && (
           <motion.div className="w-screen h-screen fixed top-0 left-0 flex">
