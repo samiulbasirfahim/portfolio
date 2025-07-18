@@ -22,8 +22,6 @@ export default function Loading() {
   if (!firstLoad) return null;
 
   return (
-    firstLoad && (
-      <div className="h-screen w-screen top-0 left-0 fixed bg-black" />
-    )
+    firstLoad && <div className="h-dvh w-dvw top-0 left-0 fixed bg-black" />
   );
 }

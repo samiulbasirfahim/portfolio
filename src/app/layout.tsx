@@ -1,7 +1,6 @@
-import PageTransition, { CustomLink } from "@/components/core/PageTransition";
+import PageTransition from "@/components/core/PageTransition";
 import "./globals.css";
-import Link from "next/link";
-import FIrstLoading from "@/components/core/FirstLoading";
+import Navbar from "@/components/layout/Navbar";
 
 export default function RootLayout({
   children,
@@ -12,10 +11,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <PageTransition>
-          <div className="space-x-10 p-8">
-            <CustomLink href={"/"}>HOME</CustomLink>
-            <CustomLink href={"/about"}>About</CustomLink>
-          </div>
+          <Navbar />
           {children}
         </PageTransition>
       </body>

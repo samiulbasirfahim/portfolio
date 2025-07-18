@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import { HTMLAttributes, ReactNode, useEffect } from "react";
 import FIrstLoading from "./FirstLoading";
 import { useTransitionContext } from "./PageTransition";
 

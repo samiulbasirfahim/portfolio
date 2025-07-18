@@ -1,7 +1,6 @@
 import PageContainer from "@/components/core/PageContainer";
 
-export default async function Home() {
-  await new Promise((res) => setTimeout(res, 3000));
+export default function Home() {
   return (
     <PageContainer>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,

@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -66,23 +66,11 @@ export default function PageTransition({
   const [loading, setLoading] = useState(false);
 
   const [firstLoad, setFirstLoad] = useState(true);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  // useEffect(() => {
-  //   console.log(
-  //     "Route change completed:",
-  //     `${pathname}?${searchParams}`,
-  //     new Date().toISOString(),
-  //   );
-  //   setTimeout(() => setLoading(false), 1000);
-  // }, [pathname, searchParams]);
-  //
   useEffect(() => {
     console.log(`Current state for loading is ${loading}`);
   }, [loading]);
 
-  const columnCount = 5;
+  const columnCount = 4;
 
   return (
     <TransitionContext.Provider
@@ -90,7 +78,7 @@ export default function PageTransition({
     >
       <AnimatePresence>
         {loading && (
-          <motion.div className="w-screen h-screen fixed top-0 left-0 flex">
+          <motion.div className="h-dvh w-dvw fixed top-0 left-0 flex">
             {[...Array(columnCount)].map((_, i) => {
               const j = columnCount - i;
               return (

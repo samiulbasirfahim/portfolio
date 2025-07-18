@@ -11,11 +11,11 @@ export default function FIrstLoading() {
     setTimeout(() => setFirstLoad(false), 1000);
   });
 
-  const columnCount = 5;
+  const columnCount = 4;
   return (
     <AnimatePresence>
       {firstLoad && (
-        <motion.div className="w-screen h-screen fixed top-0 left-0 flex">
+        <motion.div className="h-dvh w-dvw fixed top-0 left-0 flex">
           {[...Array(columnCount)].map((_, i) => {
             const j = columnCount - i;
             return (
