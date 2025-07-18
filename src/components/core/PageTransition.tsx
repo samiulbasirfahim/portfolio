@@ -1,0 +1,111 @@
+"use client";
+
+import { createContext, useContext, useEffect, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
+
+type TransitionContextType = {
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
+};
+
+const TransitionContext = createContext<TransitionContextType>({
+  loading: false,
+  setLoading: () => {},
+});
+
+export const useTransitionContext = () => useContext(TransitionContext);
+
+export function CustomLink({
+  href,
+  children,
+  ...props
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  const { setLoading } = useTransitionContext();
+
+  const currentPathname = usePathname();
+
+  // Normalize href to handle relative paths or query params
+  const normalizedHref = href.startsWith("/")
+    ? href.split("?")[0]
+    : `/${href.split("?")[0]}`;
+  return (
+    <Link
+      href={href}
+      onClick={() => {
+        console.log("Route change started:", href, new Date().toISOString());
+        if (normalizedHref !== currentPathname) {
+          setLoading(true);
+        }
+      }}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+}
+
+export default function PageTransition({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [loading, setLoading] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    console.log(
+      "Route change completed:",
+      `${pathname}?${searchParams}`,
+      new Date().toISOString(),
+    );
+    setTimeout(() => setLoading(false), 1000);
+  }, [pathname, searchParams]);
+
+  useEffect(() => {
+    console.log(`Current state for loading is ${loading}`);
+  }, [loading]);
+
+  const columnCount = 5;
+
+  return (
+    <TransitionContext.Provider value={{ loading, setLoading }}>
+      <AnimatePresence>
+        {loading && (
+          <motion.div className="w-screen h-screen fixed top-0 left-0 flex">
+            {[...Array(columnCount)].map((_, i) => {
+              const j = columnCount - i;
+              return (
+                <motion.div
+                  className="bg-black relative w-full h-full"
+                  key={i}
+                  initial={{ top: "100vh" }}
+                  animate={{
+                    top: 0,
+                    transition: {
+                      duration: 0.3,
+                      delay: j * 0.08,
+                    },
+                  }}
+                  exit={{
+                    height: 0,
+                    transition: {
+                      duration: 0.3,
+                      delay: j * 0.08,
+                    },
+                  }}
+                />
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {children}
+    </TransitionContext.Provider>
+  );
+}
