@@ -6,8 +6,10 @@ import { useTransitionContext } from "./PageTransition";
 
 export default function PageContainer({ children }: { children: ReactNode }) {
   const { setLoading } = useTransitionContext();
+
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
+    setLoading(false);
+    // setTimeout(() => setLoading(false), 1000);
   }, []);
   return (
     <div>

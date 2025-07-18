@@ -1,4 +1,3 @@
-import FIrstLoading from "@/components/core/FirstLoading";
 import PageContainer from "@/components/core/PageContainer";
 
 export default async function Home() {

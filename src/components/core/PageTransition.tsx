@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -31,6 +31,8 @@ export function CustomLink({
 }) {
   const { setLoading } = useTransitionContext();
 
+  const router = useRouter();
+
   const currentPathname = usePathname();
 
   const normalizedHref = href.startsWith("/")
@@ -39,7 +41,11 @@ export function CustomLink({
   return (
     <Link
       href={href}
-      onClick={() => {
+      onClick={(e) => {
+        e.preventDefault();
+        setTimeout(() => {
+          router.push(href);
+        }, 1000);
         console.log("Route change started:", href, new Date().toISOString());
         if (normalizedHref !== currentPathname) {
           setLoading(true);
