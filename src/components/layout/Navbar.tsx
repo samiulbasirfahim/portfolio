@@ -18,13 +18,13 @@ export default function Navbar() {
             className="w-1/4 h-full bg-black relative top-[-100%]"
             variants={{
               taped: {
-                top: "-70%",
+                top: "-75%",
                 transition: {
                   duration: 0.2,
                 },
               },
               hovered: {
-                top: "-90%",
+                top: "-85%",
                 transition: {
                   duration: 0.3,
                 },
