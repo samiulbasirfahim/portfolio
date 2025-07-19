@@ -5,10 +5,8 @@ import PageContainer from "@/components/core/PageContainer";
 import SlideUpText from "@/components/ui/SlideUpText";
 import Skills from "@/components/ui/Skills";
 import { Icon } from "@iconify/react";
-import Link from "next/link";
 import { useRef } from "react";
 import Text from "@/components/ui/Text";
-import ScrollGlowText from "@/components/ui/ScrollGlowText";
 
 export default function Home() {
   const skillsRef = useRef(null);
