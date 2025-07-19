@@ -7,21 +7,10 @@ import { Icon } from "@iconify/react";
 
 export default function SkillSection() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [direction, setDirection] = useState(0); // 1 for increment (slide down), -1 for decrement (slide up)
     const categoryRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    const prevIndex = useRef(0);
-    const [direction, setDirection] = useState<"up" | "down">("up");
-    const hasMounted = useRef(false);
-
-    useEffect(() => {
-        if (hasMounted.current) {
-            setDirection(activeIndex > prevIndex.current ? "up" : "down");
-        } else {
-            hasMounted.current = true;
-        }
-        prevIndex.current = activeIndex;
-    }, [activeIndex]);
-
+    // IntersectionObserver to detect visible section
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -31,7 +20,10 @@ export default function SkillSection() {
                             (el) => el === entry.target,
                         );
                         if (index !== -1) {
-                            setActiveIndex(index);
+                            setActiveIndex((prevIndex) => {
+                                setDirection(index > prevIndex ? 1 : -1);
+                                return index;
+                            });
                             break;
                         }
                     }
@@ -40,7 +32,7 @@ export default function SkillSection() {
             {
                 root: null,
                 rootMargin: "0px",
-                threshold: 0.3,
+                threshold: 0.3, // Kept as is; adjust if needed for sensitivity
             },
         );
 
@@ -51,26 +43,34 @@ export default function SkillSection() {
         return () => observer.disconnect();
     }, []);
 
+    // Animation variants for directional sliding
+    const variants = {
+        initial: (direction: number) => ({
+            opacity: 0,
+            y: direction > 0 ? 40 : -40, // Slide down if incrementing, up if decrementing
+        }),
+        animate: {
+            opacity: 1,
+            y: 0,
+        },
+        exit: (direction: number) => ({
+            opacity: 0,
+            y: direction > 0 ? -40 : 40, // Exit up if incrementing, down if decrementing
+        }),
+    };
     return (
         <div className="w-full justify-center flex">
             <div className="flex gap-20 px-4 md:px-8 lg:px-16 flex-col md:flex-row">
                 <div className="sticky md:top-32 h-max top-0 w-full flex">
                     <div className="md:hidden text-4xl font-semibold top-0 sticky bg-background w-full py-3 text-center overflow-hidden">
-                        <AnimatePresence mode="wait">
+                        <AnimatePresence mode="wait" initial={false} custom={direction}>
                             <motion.span
                                 key={activeIndex}
-                                initial={{
-                                    opacity: 0,
-                                    y: direction === "up" ? 40 : -40,
-                                }}
-                                animate={{
-                                    opacity: 1,
-                                    y: 0,
-                                }}
-                                exit={{
-                                    opacity: 0,
-                                    y: direction === "up" ? -40 : 40,
-                                }}
+                                variants={variants}
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
+                                custom={direction}
                                 transition={{ duration: 0.1, ease: "easeInOut" }}
                                 className="inline-block"
                             >
