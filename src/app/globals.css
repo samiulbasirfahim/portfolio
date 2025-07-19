@@ -3,6 +3,7 @@
 @theme {
     --color-background: #fdf7f2;
     --color-forground: #1e1e1e;
+    --color-foreground: #1e1e1e;
 }
 
 .mx-dynamic {

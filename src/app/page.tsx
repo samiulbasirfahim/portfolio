@@ -35,7 +35,7 @@ export default function Home() {
             </h1>
 
             <motion.p
-              className="font-semibold text-sm lg:text-xl text-center mt-4 uppercase text-wrap"
+              className="font-semibold text-sm lg:text-xl text-center mt-4 uppercase text-wrap px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: 1,
@@ -47,7 +47,15 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="mb-20">
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.2, delay: 1.4 },
+            }}
+          >
             <Text className="text-base mt-10 max-w-md mx-auto">
               Self-taught developer crafting interactive web experiences.
               Focused on learning fast, building smart, and shipping clean code.
@@ -70,14 +78,13 @@ export default function Home() {
                 <Icon icon="lineicons:scroll-down-2" fontSize={38} />
               </motion.span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
       <div className="w-full sticky top-0 bg-background">
         <div id="skills" className="w-full py-20" ref={skillsRef}>
           <Skills />
         </div>
-
       </div>
     </PageContainer>
   );

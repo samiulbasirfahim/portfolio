@@ -15,16 +15,21 @@ export default function Navbar() {
       <motion.div whileHover={"hovered"} whileTap={"taped"} className="">
         <motion.div className="w-dvw fixed top-0 left-0 flex justify-end h-dvw pointer-events-none ">
           <motion.div
-            className="w-1/4 h-full bg-black relative top-[-100%]"
+            className="w-1/4 bg-black relative"
+            initial={{
+              height: 0,
+            }}
             variants={{
               taped: {
-                top: "-40%",
+                top: 0,
+                height: "50dvh",
                 transition: {
                   duration: 0.2,
                 },
               },
               hovered: {
-                top: "-85%",
+                top: 0,
+                height: "40dvh",
                 transition: {
                   duration: 0.3,
                 },
@@ -40,7 +45,7 @@ export default function Navbar() {
             transition: {
               duration: 2,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             },
           }}
           variants={{

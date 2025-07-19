@@ -45,7 +45,7 @@ export function CustomLink({
         e.preventDefault();
         setTimeout(() => {
           router.push(href);
-        }, 1000);
+        }, 800);
         console.log("Route change started:", href, new Date().toISOString());
         if (normalizedHref !== currentPathname) {
           setLoading(true);

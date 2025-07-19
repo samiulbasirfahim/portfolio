@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import LayoutWrapper from "@/components/core/LayoutWrapper";
 import { Metadata } from "next";
 import CursorWrapper from "@/components/core/CursorWrapper";
+import Footer from "@/components/layout/Footer";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const geist = Geist({
 
 const victorMono = Victor_Mono({
   subsets: ["latin"],
-  variable: "--font-victor-mono"
+  variable: "--font-victor-mono",
 });
 
 const geistMono = Geist_Mono({
@@ -44,8 +45,13 @@ export default function RootLayout({
         <body>
           <CursorWrapper>
             <PageTransition>
-              <Navbar />
-              {children}
+              <div className="flex flex-col min-h-screen">
+                <div className="z-[99]">
+                  <Navbar />
+                  {children}
+                </div>
+                <Footer />
+              </div>
             </PageTransition>
           </CursorWrapper>
         </body>
