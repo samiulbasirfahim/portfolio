@@ -59,39 +59,43 @@ export default function SkillSection() {
                 </div>
 
                 <div className="overflow-y-auto space-y-4 w-full">
-                    {skillset.map((category, i) => (
-                        <div
-                            key={category.title}
-                            ref={(el) => (categoryRefs.current[i] = el)}
-                        >
-                            <ul className="grid grid-cols-1 gap-6 w-full">
-                                {category.skills.map((skill) => (
-                                    <li
-                                        key={skill.title}
-                                        className="pb-4 border-b border-muted bg-background/10 transition-all flex flex-col items-center text-center space-y-2"
-                                    >
-                                        <Icon icon={skill.icon} fontSize={30} className="mb-2" />
-                                        <p className="font-semibold text-xl">{skill.title}</p>
-                                        <p className="text-sm text-forground/70 font-mono">
-                                            {skill.description}
-                                        </p>
-                                        {skill.level && (
-                                            <span
-                                                className={`text-xs mt-2 px-2 py-0.5 rounded-full ${skill.level === "beginner"
-                                                        ? "bg-yellow-400/10 text-yellow-500 border border-yellow-400/30"
-                                                        : skill.level === "intermediate"
-                                                            ? "bg-blue-400/10 text-blue-500 border border-blue-400/30"
-                                                            : "bg-green-400/10 text-green-500 border border-green-400/30"
-                                                    }`}
-                                            >
-                                                {skill.level}
-                                            </span>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                    {skillset.map((category, i) => {
+                        return (
+                            <div
+                                key={category.title}
+                                ref={(el) => {
+                                    categoryRefs.current[i] = el;
+                                }}
+                            >
+                                <ul className="grid grid-cols-1 gap-6 w-full">
+                                    {category.skills.map((skill) => (
+                                        <li
+                                            key={skill.title}
+                                            className="pb-4 border-b border-muted bg-background/10 transition-all flex flex-col items-center text-center space-y-2"
+                                        >
+                                            <Icon icon={skill.icon} fontSize={30} className="mb-2" />
+                                            <p className="font-semibold text-xl">{skill.title}</p>
+                                            <p className="text-sm text-forground/70 font-mono">
+                                                {skill.description}
+                                            </p>
+                                            {skill.level && (
+                                                <span
+                                                    className={`text-xs mt-2 px-2 py-0.5 rounded-full ${skill.level === "beginner"
+                                                            ? "bg-yellow-400/10 text-yellow-500 border border-yellow-400/30"
+                                                            : skill.level === "intermediate"
+                                                                ? "bg-blue-400/10 text-blue-500 border border-blue-400/30"
+                                                                : "bg-green-400/10 text-green-500 border border-green-400/30"
+                                                        }`}
+                                                >
+                                                    {skill.level}
+                                                </span>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
