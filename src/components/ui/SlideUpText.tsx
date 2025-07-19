@@ -18,7 +18,7 @@ export default function SlideUpText({
         whileHover="hovered"
         className="relative block overflow-hidden whitespace-nowrap font-black uppercase"
         style={{
-          lineHeight: 0.75,
+          lineHeight: 1,
         }}
       >
         <div className="">
