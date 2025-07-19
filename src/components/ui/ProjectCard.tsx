@@ -32,9 +32,9 @@ export default function ProjectCard({
             className="h-dvh flex items-start justify-center sticky w-full lg:top-[10dvh] top-[5dvh] lg:px-20"
             ref={container}
         >
-            <motion.div className="relative p-4 rounded-md w-full h-[55dvh] flex bg-dark gap-4 text-background overflow-hidden">
-                {/* Left: Image */}
-                <div className="w-[40%] h-full overflow-hidden rounded relative">
+            <motion.div className="relative lg:p-6 rounded-md w-full h-[80dvh] flex bg-forground gap-4 text-background">
+                {/* Image Section */}
+                <div className="w-1/2 md:h-auto overflow-hidden rounded relative">
                     <Image
                         src={imageUrl}
                         alt={title}
@@ -44,35 +44,29 @@ export default function ProjectCard({
                     />
                 </div>
 
-                {/* Right: Text Content */}
-                <div className="w-[60%] h-full flex flex-col justify-between gap-2 pr-1">
+                {/* Content Section */}
+                <div className="w-1/2 flex flex-col justify-between py-4 pr-4">
                     <div>
-                        <h2 className="text-xl font-semibold mb-1">{title}</h2>
-                        <p className="text-xs text-muted-foreground leading-snug line-clamp-5">
-                            Scholario is a fast, offline-capable school management desktop app
-                            built with Svelte and Tauri. It features student and staff
-                            management, custom attendance states, and a modular, customizable
-                            dashboard with low-memory performance. Designed for small to
-                            medium institutions, Scholario makes administrative tasks more
-                            efficient and delightful.
+                        <h2 className="text-2xl font-bold mb-2">{title}</h2>
+                        <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
+                            {description}
                         </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {techUsed.map((tech: string) => (
+                                <span
+                                    key={tech}
+                                    className="text-xs px-2 py-1 rounded font-mono bg-background/20"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-1 text-[10px] mt-2">
-                        {techUsed.map((tech) => (
-                            <span
-                                key={tech}
-                                className="bg-muted text-foreground px-2 py-0.5 rounded font-mono"
-                            >
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-
-                    <div className="flex gap-3 text-xs mt-2">
-                        <ExternalLink href={githubLink}>Source</ExternalLink>
+                    <div className="flex gap-4">
+                        <ExternalLink href={githubLink}>Source Code</ExternalLink>
                         {liveLink !== "#" && (
-                            <ExternalLink href={liveLink}>Live</ExternalLink>
+                            <ExternalLink href={liveLink}>Live Demo</ExternalLink>
                         )}
                     </div>
                 </div>
