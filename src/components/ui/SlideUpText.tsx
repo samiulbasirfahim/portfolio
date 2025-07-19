@@ -1,73 +1,76 @@
 "use client";
 
 import { motion } from "motion/react";
+import Text from "./Text";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
 export default function SlideUpText({ children }: { children: string }) {
   return (
-    <motion.span
-      initial="initial"
-      whileHover="hovered"
-      className="relative block overflow-hidden whitespace-nowrap font-black uppercase"
-      style={{
-        lineHeight: 0.75,
-      }}
-    >
-      <div className="">
-        {children.split("").map((l: string, i: number) => (
-          <motion.span
-            className="inline-block"
-            variants={{
-              initial: {
-                y: 0,
-              },
+    <Text>
+      <motion.span
+        initial="initial"
+        whileHover="hovered"
+        className="relative block overflow-hidden whitespace-nowrap font-black uppercase"
+        style={{
+          lineHeight: 0.75,
+        }}
+      >
+        <div className="">
+          {children.split("").map((l: string, i: number) => (
+            <motion.span
+              className="inline-block"
+              variants={{
+                initial: {
+                  y: 0,
+                },
 
-              hovered: {
-                y: "-120%",
-              },
-            }}
-            transition={{
-              duration: DURATION,
+                hovered: {
+                  y: "-120%",
+                },
+              }}
+              transition={{
+                duration: DURATION,
 
-              ease: "easeInOut",
+                ease: "easeInOut",
 
-              delay: STAGGER * i,
-            }}
-            key={i}
-          >
-            {l === " " ? "\u00A0" : l}
-          </motion.span>
-        ))}
-      </div>
+                delay: STAGGER * i,
+              }}
+              key={i}
+            >
+              {l === " " ? "\u00A0" : l}
+            </motion.span>
+          ))}
+        </div>
 
-      <div className="absolute inset-0">
-        {children.split("").map((l: string, i: number) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: "100%",
-              },
+        <div className="absolute inset-0">
+          {children.split("").map((l: string, i: number) => (
+            <motion.span
+              variants={{
+                initial: {
+                  y: "100%",
+                },
 
-              hovered: {
-                y: 0,
-              },
-            }}
-            transition={{
-              duration: DURATION,
+                hovered: {
+                  y: 0,
+                },
+              }}
+              transition={{
+                duration: DURATION,
 
-              ease: "easeInOut",
+                ease: "easeInOut",
 
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l === " " ? "\u00A0" : l}
-          </motion.span>
-        ))}
-      </div>
-    </motion.span>
+                delay: STAGGER * i,
+              }}
+              className="inline-block"
+              key={i}
+            >
+              {l === " " ? "\u00A0" : l}
+            </motion.span>
+          ))}
+        </div>
+      </motion.span>
+    </Text>
   );
 }

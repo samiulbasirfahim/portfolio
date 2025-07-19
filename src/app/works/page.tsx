@@ -1,25 +1,16 @@
 "use client";
 
 import PageContainer from "@/components/core/PageContainer";
-import { useScroll } from "motion/react";
-import { useEffect, useRef } from "react";
+import Text from "@/components/ui/Text";
 
 export default function Projects() {
-    const projects = [
-        {
-            title: "Schlario",
-            description:
-                "Scholario is a fast, offline-capable school management desktop app built with Svelte and Tauri. It features student and staff management, a flexible attendance system, and a clean, customizable dashboard.",
-            techUsed: ["Svelte", "Tauri", "Tailwind CSS", "Rust"],
-            githubLink: "https://github.com/samiulbasirfahim/scholario.git",
-            liveLink: "#",
-            imageUrl: "/images/works/scholario.png",
-        },
-    ];
-
-    return (
-        <PageContainer>
-            <p className="text-6xl">UPCOMING</p>
-        </PageContainer>
-    );
+  return (
+    <PageContainer>
+      <div className="h-screen w-full flex items-center justify-center">
+        <Text className="text-2xl md:text-4xl lg:text-8xl font-bold">
+          UPCOMING
+        </Text>
+      </div>
+    </PageContainer>
+  );
 }
