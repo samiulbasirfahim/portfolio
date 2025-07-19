@@ -12,7 +12,7 @@ export default function PageContainer({ children }: { children: ReactNode }) {
     // setTimeout(() => setLoading(false), 1000);
   }, []);
   return (
-    <div className="mx-dynamic">
+    <div>
       {children}
       <FIrstLoading />
     </div>

@@ -50,7 +50,7 @@ export default function SkillSection() {
                                     opacity: activeIndex === i ? 1 : 0.4,
                                 }}
                                 transition={{ type: "spring", stiffness: 200 }}
-                                className={`text-6xl font-bold capitalize transition-all duration-200`}
+                                className={`text-6xl capitalize transition-all duration-200 font-extrabold`}
                             >
                                 {category.title}
                             </motion.li>

@@ -4,13 +4,12 @@ import { motion } from "motion/react";
 
 import { CustomLink } from "../core/PageTransition";
 import { usePathname } from "next/navigation";
-import SlideUpText from "../ui/SlideUpText";
 
 export default function Navbar() {
     const path = usePathname();
 
     return (
-        <nav className="p-4 flex justify-end items-center mb-10 py-4 sticky top-0  z-[9999]">
+        <nav className="flex justify-end items-center fixed top-0 right-0 z-[9999]">
             <motion.div whileHover={"hovered"} whileTap={"taped"}>
                 <motion.div className="w-dvw fixed top-0 left-0 flex justify-end h-dvw pointer-events-none ">
                     <motion.div

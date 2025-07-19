@@ -78,7 +78,7 @@ export default function PageTransition({
         >
             <AnimatePresence>
                 {loading && (
-                    <motion.div className="h-dvh w-screen fixed top-0 left-0 flex z-[9999]">
+                    <motion.div className="h-dvh w-dvw fixed top-0 left-0 flex z-[9999]">
                         {[...Array(columnCount)].map((_, i) => {
                             const j = columnCount - i;
                             return (
