@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { skillset } from "@/data/skill-set";
 import { Icon } from "@iconify/react";
@@ -8,6 +8,19 @@ import { Icon } from "@iconify/react";
 export default function SkillSection() {
     const [activeIndex, setActiveIndex] = useState(0);
     const categoryRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    const prevIndex = useRef(0);
+    const [direction, setDirection] = useState<"up" | "down">("up");
+    const hasMounted = useRef(false);
+
+    useEffect(() => {
+        if (hasMounted.current) {
+            setDirection(activeIndex > prevIndex.current ? "up" : "down");
+        } else {
+            hasMounted.current = true;
+        }
+        prevIndex.current = activeIndex;
+    }, [activeIndex]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -40,9 +53,32 @@ export default function SkillSection() {
 
     return (
         <div className="w-full justify-center flex">
-            <div className="flex gap-20 px-4 md:px-8 lg:px-16">
-                <div className="sticky top-32 h-max">
-                    <ul className="space-y-8">
+            <div className="flex gap-20 px-4 md:px-8 lg:px-16 flex-col md:flex-row">
+                <div className="sticky md:top-32 h-max top-0 w-full flex">
+                    <div className="md:hidden text-4xl font-semibold top-0 sticky bg-background w-full py-3 text-center overflow-hidden">
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={activeIndex}
+                                initial={{
+                                    opacity: 0,
+                                    y: direction === "up" ? 40 : -40,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    y: direction === "up" ? -40 : 40,
+                                }}
+                                transition={{ duration: 0.1, ease: "easeInOut" }}
+                                className="inline-block"
+                            >
+                                {skillset[activeIndex].title}
+                            </motion.span>
+                        </AnimatePresence>
+                    </div>
+                    <ul className="space-y-8 hidden md:block">
                         {skillset.map((category, i) => (
                             <motion.li
                                 key={category.title}

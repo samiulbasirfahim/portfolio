@@ -23,13 +23,18 @@ export default function Home() {
         <PageContainer>
             <div className="bg-forground top-0 sticky">
                 <motion.div
-                    className="hero text-4xl md:text-6xl lg:text-8xl h-screen w-full flex items-center justify-center sticky top-0 flex-col bg-background"
+                    className="hero text-5xl md:text-6xl lg:text-8xl h-screen w-full flex items-center justify-center sticky top-0 flex-col bg-background text-center"
                     style={{ scale, rotate, opacity: scale }}
                 >
                     <div>
-                        <SlideUpText>Samiul Basir Fahim</SlideUpText>
+                        <div className="hidden lg:block">
+                            <SlideUpText>Samiul Basir Fahim</SlideUpText>
+                        </div>
+                        <h1 className="md:hidden font-bold uppercase">
+                            Samiul Basir Fahim
+                        </h1>
                         <motion.p
-                            className="font-semibold text-xl text-center mt-4 uppercase"
+                            className="font-semibold text-sm lg:text-xl text-center mt-4 uppercase text-wrap"
                             initial={{
                                 opacity: 0,
                                 y: 20,
