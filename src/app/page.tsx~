@@ -75,11 +75,32 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
-      <div className="w-full sticky top-0 bg-background">
-        <div id="skills" className="w-full py-20" ref={skillsRef}>
+      <div className="w-full sticky top-0">
+        <div
+          id="skills"
+          className=" bg-background w-full py-20"
+          ref={skillsRef}
+        >
           <Skills />
         </div>
-
+        <div className="w-full bg-background flex justify-center items-center min-h-[80dvh]">
+          <ScrollGlowText className="w-3/4 text-xl font-bold font-display text-center">
+            I started programming in 2021 by completing the Complete Web
+            Development Course from Programming Hero. After building some
+            freelance projects, I shifted my focus toward low-level development,
+            diving into driver and kernel programming. To support this, I
+            learned C and C++, and later picked up Rust to explore safer system
+            programming. Around September 2023, I completed the Computer Science
+            Fundamental Course by Phitron and began competitive programming to
+            sharpen my problem-solving skills. For web development, I’ve worked
+            extensively with Svelte and SvelteKit, and I use Tauri to build
+            cross-platform desktop apps for Windows and Linux. On the backend, I
+            primarily use Bun, Node.js, Hono, and Express for building fast and
+            scalable APIs. For safer and more performant services, I leverage
+            Rust with the Axum framework.
+          </ScrollGlowText>
+        </div>
+        <div className="h-screen w-full bg-background"></div>
       </div>
     </PageContainer>
   );

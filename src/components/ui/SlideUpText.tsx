@@ -2,13 +2,17 @@
 
 import { motion } from "motion/react";
 import Text from "./Text";
+import { HTMLAttributes } from "react";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-export default function SlideUpText({ children }: { children: string }) {
+export default function SlideUpText({
+  children,
+  ...rest
+}: { children: string } & HTMLAttributes<HTMLElement>) {
   return (
-    <Text>
+    <Text {...rest}>
       <motion.span
         initial="initial"
         whileHover="hovered"

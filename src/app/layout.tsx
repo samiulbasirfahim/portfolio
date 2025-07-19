@@ -1,6 +1,6 @@
 import PageTransition from "@/components/core/PageTransition";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Victor_Mono } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -11,6 +11,11 @@ import CursorWrapper from "@/components/core/CursorWrapper";
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
+});
+
+const victorMono = Victor_Mono({
+  subsets: ["latin"],
+  variable: "--font-victor-mono"
 });
 
 const geistMono = Geist_Mono({
@@ -33,7 +38,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geist.variable} ${geistMono.variable} antialiased`}
+      className={`${victorMono.variable} antialiased`}
     >
       <LayoutWrapper>
         <body>

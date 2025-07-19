@@ -3,8 +3,6 @@
 @theme {
     --color-background: #fdf7f2;
     --color-forground: #1e1e1e;
-    --font-display: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
 }
 
 .mx-dynamic {
@@ -13,6 +11,6 @@
 
 body {
     background-color: var(--color-background);
-    font-family: var(--font-geist-mono);
+    font-family: var(--font-victor-mono);
     color: var(--color-forground);
 }
