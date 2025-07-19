@@ -2,8 +2,9 @@
 
 import PageContainer from "@/components/core/PageContainer";
 import ProjectCard from "@/components/ui/ProjectCard";
+import Lenis from "lenis";
 import { useScroll } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Projects() {
   const projects = [
@@ -54,20 +55,39 @@ export default function Projects() {
     },
   ];
 
-  const containerRef = useRef(null);
+  const container = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: container,
     offset: ["start start", "end end"],
+  });
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
   });
 
   return (
     <PageContainer>
-      <h1>PROJECTS</h1>
-
-      <div className="mt-[10dvh] mb-[100dvh]" ref={containerRef}>
-        {projects.map((project, i) => (
-          <ProjectCard {...project} key={i} index={i} />
-        ))}
+      <div ref={container}>
+        {projects.map((project, i) => {
+          const targetScale = 1 - (projects.length - i) * 0.05;
+          return (
+            <ProjectCard
+              {...project}
+              key={i}
+              index={i}
+              progress={scrollYProgress}
+              range={[i * 0.25, 1]}
+              targetScale={targetScale}
+            />
+          );
+        })}
       </div>
     </PageContainer>
   );

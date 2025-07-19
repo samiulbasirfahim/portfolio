@@ -1,12 +1,17 @@
 import PageContainer from "@/components/core/PageContainer";
+import SlideUpText from "@/components/ui/SlideUpText";
 
 export default function Home() {
   return (
     <PageContainer>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
-      praesentium quibusdam? Quas ad dicta voluptates perspiciatis consectetur,
-      ducimus placeat suscipit similique, officia adipisci accusantium deserunt
-      modi vitae dolor magnam. Doloribus.
+      <div className="flex items-end gap-8">
+        <span className="text-xl">Hello, I&apos;m</span>
+        <div className="text-6xl md:text-8xl lg:text-9xl space-y-4">
+          <SlideUpText>Samiul</SlideUpText>
+          <SlideUpText>Basir</SlideUpText>
+          <SlideUpText>Fahim</SlideUpText>
+        </div>
+      </div>
     </PageContainer>
   );
 }

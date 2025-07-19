@@ -4,43 +4,47 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 export default function ProjectCard({
-  title,
-  description,
-  techUsed,
-  githubLink,
-  liveLink,
-  imageUrl,
-  index,
+    title,
+    description,
+    techUsed,
+    githubLink,
+    liveLink,
+    imageUrl,
+    index,
+    progress,
+    range,
+    targetScale,
 }) {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "start start"],
-  });
+    const container = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: container,
+        offset: ["start end", "start start"],
+    });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [2.5, 1]);
-  const scaleCard = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+    const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+    const scale = useTransform(progress, range, [1, targetScale]);
+    const translateY = useTransform(scale, [1, targetScale], [0, -200]);
 
-  return (
-    <div
-      className="h-dvh flex items-center justify-center sticky top-0 w-full px-40  py-40"
-      ref={containerRef}
-    >
-      <motion.div
-        className="w-full h-full relative bg-white p-10 border overflow-hidden"
-        style={{ top: `calc(-10% + ${index} * 25px)` }}
-      >
-        <motion.div
-          className="inset-0 z-0 bg-cover absolute overflow-hidden bg-center"
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            scale,
-          }}
-        />
-        <div>{title}</div>
-      </motion.div>
-    </div>
-  );
+    return (
+        <div
+            className="h-dvh flex items-start justify-center sticky w-full lg:top-[10dvh] top-[5dvh] lg:px-20"
+            ref={container}
+        >
+            <motion.div
+                className="relative lg:p-10 overflow-hidden rounded-md w-full h-[80dvh] bg-teal-400"
+                style={{ scale, translateY }}
+            >
+                <motion.div
+                    className="inset-0 z-0 bg-cover absolute overflow-hidden bg-center"
+                    style={{
+                        backgroundImage: `url(${imageUrl})`,
+                        scale: imageScale,
+                    }}
+                />
+                <div>{title}</div>
+            </motion.div>
+        </div>
+    );
 }
 
 // <div className="relative w-full rounded-2xl overflow-hidden mb-8 bg-black/60 backdrop-blur-lg text-white shadow-xl">

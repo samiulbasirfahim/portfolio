@@ -7,10 +7,10 @@ const STAGGER = 0.025;
 
 export default function SlideUpText({ children }: { children: string }) {
   return (
-    <motion.a
+    <motion.span
       initial="initial"
       whileHover="hovered"
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+      className="relative block overflow-hidden whitespace-nowrap font-black uppercase"
       style={{
         lineHeight: 0.75,
       }}
@@ -18,6 +18,7 @@ export default function SlideUpText({ children }: { children: string }) {
       <div className="">
         {children.split("").map((l: string, i: number) => (
           <motion.span
+            className="inline-block"
             variants={{
               initial: {
                 y: 0,
@@ -34,7 +35,6 @@ export default function SlideUpText({ children }: { children: string }) {
 
               delay: STAGGER * i,
             }}
-            className="inline-block"
             key={i}
           >
             {l === " " ? "\u00A0" : l}
@@ -68,6 +68,6 @@ export default function SlideUpText({ children }: { children: string }) {
           </motion.span>
         ))}
       </div>
-    </motion.a>
+    </motion.span>
   );
 }

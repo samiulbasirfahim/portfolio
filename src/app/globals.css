@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+    --color-background: #fdf7f2;
+    --color-forground: #4b5c72;
+    --color-dark: #1e1e1e;
+}
+
+.mx-dynamic {
+    @apply lg:mx-10 mx-2;
+}
+
+body {
+    background-color: var(--color-background);
+}

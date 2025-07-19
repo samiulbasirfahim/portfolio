@@ -9,8 +9,6 @@ export default function Loading() {
   useEffect(() => {
     const alreadyLoaded = sessionStorage.getItem("alreadyLoaded");
 
-    console.log("HELLO, i can run console.log from loading.tsx");
-
     if (alreadyLoaded) {
       setFirstLoad(false);
       return;
@@ -22,6 +20,6 @@ export default function Loading() {
   if (!firstLoad) return null;
 
   return (
-    firstLoad && <div className="h-dvh w-dvw top-0 left-0 fixed bg-black" />
+    firstLoad && <div className="h-dvh w-dvw top-0 left-0 fixed bg-black z-[9999]" />
   );
 }

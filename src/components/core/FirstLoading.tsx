@@ -15,7 +15,7 @@ export default function FIrstLoading() {
   return (
     <AnimatePresence>
       {firstLoad && (
-        <motion.div className="h-dvh w-dvw fixed top-0 left-0 flex">
+        <motion.div className="h-dvh w-dvw fixed top-0 left-0 flex  z-[9999]">
           {[...Array(columnCount)].map((_, i) => {
             const j = columnCount - i;
             return (
