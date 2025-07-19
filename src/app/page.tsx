@@ -54,7 +54,7 @@ export default function Home() {
                     <Icon icon="lineicons:scroll-down-2" fontSize={38} />
                 </motion.span>
             </div>
-            <div id="skills" className="py-8 sticky top-0">
+            <div id="skills" className="py-8 sticky top-0 pb-40">
                 <Skills />
             </div>
         </PageContainer>

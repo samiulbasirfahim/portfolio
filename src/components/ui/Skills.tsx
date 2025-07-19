@@ -40,9 +40,9 @@ export default function SkillSection() {
 
     return (
         <div className="w-full justify-center flex">
-            <div className="flex gap-12 px-4 md:px-8 lg:px-16">
+            <div className="flex gap-20 px-4 md:px-8 lg:px-16">
                 <div className="sticky top-32 h-max">
-                    <ul className="space-y-6">
+                    <ul className="space-y-8">
                         {skillset.map((category, i) => (
                             <motion.li
                                 key={category.title}
@@ -50,7 +50,7 @@ export default function SkillSection() {
                                     opacity: activeIndex === i ? 1 : 0.4,
                                 }}
                                 transition={{ type: "spring", stiffness: 200 }}
-                                className={`text-2xl font-bold capitalize transition-all duration-200`}
+                                className={`text-6xl font-bold capitalize transition-all duration-200`}
                             >
                                 {category.title}
                             </motion.li>
@@ -58,21 +58,21 @@ export default function SkillSection() {
                     </ul>
                 </div>
 
-                <div className="overflow-y-auto pr-4">
+                <div className="overflow-y-auto space-y-4 w-full">
                     {skillset.map((category, i) => (
                         <div
                             key={category.title}
                             ref={(el) => (categoryRefs.current[i] = el)}
                         >
-                            <ul className="grid grid-cols-1 gap-6">
+                            <ul className="grid grid-cols-1 gap-6 w-full">
                                 {category.skills.map((skill) => (
                                     <li
                                         key={skill.title}
-                                        className="pb-4 border-b border-muted bg-background/10 transition-all flex flex-col items-center text-center"
+                                        className="pb-4 border-b border-muted bg-background/10 transition-all flex flex-col items-center text-center space-y-2"
                                     >
                                         <Icon icon={skill.icon} fontSize={30} className="mb-2" />
-                                        <p className="font-medium text-base">{skill.title}</p>
-                                        <p className="text-xs text-muted-foreground">
+                                        <p className="font-semibold text-xl">{skill.title}</p>
+                                        <p className="text-sm text-forground/70 font-mono">
                                             {skill.description}
                                         </p>
                                         {skill.level && (

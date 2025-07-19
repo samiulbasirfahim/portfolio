@@ -17,50 +17,44 @@ export const skillset: SkillsCategory[] = [
             {
                 title: "Rust",
                 level: "intermediate",
-                description:
-                    "A systems programming language focused on safety, speed, and memory management.",
+                description: "Safe, fast, and powerful system programming language.",
                 icon: "vscode-icons:file-type-rust",
             },
             {
                 title: "JavaScript",
                 level: "advanced",
-                description:
-                    "A popular language for building interactive websites and web applications.",
+                description: "The go-to language for interactive web development.",
                 icon: "logos:javascript",
             },
             {
                 title: "TypeScript",
                 level: "advanced",
-                description:
-                    "A version of JavaScript with static types for better error checking and tooling.",
+                description: "Typed superset of JS for better tooling and safety.",
                 icon: "logos:typescript-icon",
             },
             {
                 title: "C",
-                level: "intermediate",
+                level: "advanced",
                 description:
-                    "A low-level language used for system programming and embedded software development.",
+                    "Low-level language for systems and performance-critical code.",
                 icon: "logos:c",
             },
             {
                 title: "C++",
-                level: "intermediate",
-                description:
-                    "An extension of C, adding object-oriented features for large applications and performance.",
+                level: "advanced",
+                description: "C with object-oriented features and performance.",
                 icon: "logos:c-plusplus",
             },
             {
                 title: "Bash",
-                level: "intermediate",
-                description:
-                    "A command-line tool for Linux that lets you run commands and scripts easily.",
+                level: "advanced",
+                description: "Scripting language for Linux command-line tasks.",
                 icon: "logos:bash-icon",
             },
             {
                 title: "SQL",
                 level: "intermediate",
-                description:
-                    "A language for managing and querying databases, organizing data like a pro.",
+                description: "Language for querying and managing structured data.",
                 icon: "oui:vis-query-sql",
             },
         ],
@@ -71,36 +65,31 @@ export const skillset: SkillsCategory[] = [
             {
                 title: "React",
                 level: "advanced",
-                description:
-                    "A JavaScript library for building user interfaces using reusable components.",
+                description: "Component-based library for building UIs.",
                 icon: "logos:react",
             },
             {
                 title: "Next.js",
                 level: "advanced",
-                description:
-                    "A React framework that adds server-side rendering, routing, and API capabilities.",
+                description: "Full-stack React framework with routing and SSR.",
                 icon: "logos:nextjs-icon",
             },
             {
                 title: "Svelte",
                 level: "intermediate",
-                description:
-                    "A compiler-based UI framework that turns components into efficient JavaScript.",
+                description: "Compiler-first UI framework with minimal overhead.",
                 icon: "logos:svelte-icon",
             },
             {
                 title: "SvelteKit",
                 level: "intermediate",
-                description:
-                    "The official Svelte framework for building modern apps with routing and SSR.",
+                description: "App framework for Svelte with routing and SSR.",
                 icon: "logos:svelte-icon",
             },
             {
                 title: "Tauri",
                 level: "intermediate",
-                description:
-                    "A Rust-based framework for building fast, secure, and lightweight desktop applications.",
+                description: "Build desktop apps using Rust and frontend tech.",
                 icon: "logos:tauri",
             },
         ],
@@ -111,50 +100,31 @@ export const skillset: SkillsCategory[] = [
             {
                 title: "Tailwind CSS",
                 level: "advanced",
-                description:
-                    "A utility-first CSS framework for rapidly building custom designs directly in markup.",
+                description: "Utility-first CSS for rapid UI development.",
                 icon: "devicon:tailwindcss",
             },
             {
                 title: "Framer Motion",
                 level: "intermediate",
-                description:
-                    "A motion library for React to create fluid animations and transitions.",
+                description: "Powerful animations for React components.",
                 icon: "logos:framer",
             },
             {
-                title: "Zustand",
-                level: "intermediate",
-                description:
-                    "A small, fast state-management library for React applications.",
-                icon: "logos:zustand",
-            },
-            {
-                title: "TanStack Query",
-                level: "intermediate",
-                description:
-                    "Powerful data fetching and caching tool for React and TypeScript apps.",
-                icon: "logos:react-query",
-            },
-            {
                 title: "Hono",
-                level: "beginner",
-                description:
-                    "A fast, lightweight framework for building APIs with Bun and other runtimes.",
+                level: "intermediate",
+                description: "Tiny web framework for fast APIs and servers.",
                 icon: "logos:hono",
             },
             {
                 title: "Express.js",
                 level: "intermediate",
-                description:
-                    "A minimal and flexible Node.js framework for building web apps and APIs.",
+                description: "Lightweight backend framework for Node.js.",
                 icon: "simple-icons:express",
             },
             {
                 title: "Raylib",
                 level: "beginner",
-                description:
-                    "A simple C library for creating games and graphics applications.",
+                description: "Simple C library for making games and graphics.",
                 icon: "simple-icons:raylib",
             },
         ],
@@ -164,37 +134,32 @@ export const skillset: SkillsCategory[] = [
         skills: [
             {
                 title: "SQLite",
-                level: "intermediate",
-                description:
-                    "A lightweight SQL database engine used in desktop apps and embedded systems.",
+                level: "beginner",
+                description: "Lightweight SQL database for apps and tools.",
                 icon: "devicon:sqlite",
             },
             {
                 title: "MariaDB",
                 level: "beginner",
-                description:
-                    "An open-source MySQL-compatible database system used in web and server apps.",
+                description: "Open-source SQL database, MySQL-compatible.",
                 icon: "devicon:mysql",
             },
             {
                 title: "MongoDB",
                 level: "intermediate",
-                description:
-                    "A NoSQL database that stores data in flexible, JSON-like document format.",
+                description: "NoSQL database using flexible JSON-like docs.",
                 icon: "logos:mongodb-icon",
             },
             {
                 title: "Prisma",
                 level: "intermediate",
-                description:
-                    "A modern ORM for Node.js and TypeScript that simplifies database queries and migrations.",
+                description: "Type-safe ORM for Node.js and SQL databases.",
                 icon: "material-icon-theme:prisma",
             },
             {
                 title: "Mongoose",
                 level: "beginner",
-                description:
-                    "An ODM for MongoDB that helps you define schemas and interact with data using models.",
+                description: "MongoDB ODM for schema and model handling.",
                 icon: "devicon:mongoose",
             },
         ],
@@ -204,30 +169,26 @@ export const skillset: SkillsCategory[] = [
         skills: [
             {
                 title: "Node.js",
-                level: "advanced",
-                description:
-                    "A JavaScript runtime that lets you run code outside the browser, mainly for backend tasks.",
+                level: "intermediate",
+                description: "JS runtime for backend, APIs, and tools.",
                 icon: "logos:nodejs-icon",
             },
             {
                 title: "Bun",
-                level: "beginner",
-                description:
-                    "A fast, modern JavaScript runtime and package manager supporting TypeScript and JSX natively.",
+                level: "intermediate",
+                description: "Fast JS runtime with native TS and bundler.",
                 icon: "logos:bun",
             },
             {
                 title: "Void Linux",
-                level: "intermediate",
-                description:
-                    "A lightweight Linux distribution focused on simplicity, performance, and flexibility.",
+                level: "advanced",
+                description: "Minimal Linux distro focused on performance.",
                 icon: "logos:void",
             },
             {
                 title: "Problem Solving",
-                level: "advanced",
-                description:
-                    "Skilled in solving coding challenges using algorithms, data structures, and efficient logic.",
+                level: "intermediate",
+                description: "Strong skills in logic, patterns, and challenges.",
                 icon: "icon-park:thinking-problem",
             },
         ],
