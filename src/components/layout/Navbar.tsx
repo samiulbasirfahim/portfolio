@@ -18,7 +18,7 @@ export default function Navbar() {
             className="w-1/4 h-full bg-black relative top-[-100%]"
             variants={{
               taped: {
-                top: "-75%",
+                top: "-40%",
                 transition: {
                   duration: 0.2,
                 },
