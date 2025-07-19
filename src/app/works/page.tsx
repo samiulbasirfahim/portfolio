@@ -7,88 +7,80 @@ import { useScroll } from "motion/react";
 import { useEffect, useRef } from "react";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Portfolio Website",
-      description:
-        "A sleek and modern personal portfolio built to showcase my work and skills.",
-      techUsed: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-      githubLink: "https://github.com/yourusername/portfolio",
-      liveLink: "https://portfolio.example.com",
-      imageUrl: "https://picsum.photos/seed/portfolio/1200/800",
-    },
-    {
-      title: "Task Manager App",
-      description:
-        "A simple productivity app to manage daily tasks with drag-and-drop and dark mode.",
-      techUsed: ["Vue", "Vite", "Pinia", "Tailwind CSS"],
-      githubLink: "https://github.com/yourusername/task-manager",
-      liveLink: "https://tasks.example.com",
-      imageUrl: "https://picsum.photos/seed/tasks/1200/800",
-    },
-    {
-      title: "Blog CMS",
-      description:
-        "A full-stack blog platform with markdown support, admin dashboard, and SEO features.",
-      techUsed: ["Next.js", "Prisma", "PostgreSQL", "Clerk Auth"],
-      githubLink: "https://github.com/yourusername/blog-cms",
-      liveLink: "https://blogcms.example.com",
-      imageUrl: "https://picsum.photos/seed/blog/1200/800",
-    },
-    {
-      title: "E-commerce Store",
-      description:
-        "An online store with product search, cart, Stripe checkout, and order history.",
-      techUsed: ["React", "Redux Toolkit", "Node.js", "MongoDB", "Stripe"],
-      githubLink: "https://github.com/yourusername/ecommerce-store",
-      liveLink: "https://store.example.com",
-      imageUrl: "https://picsum.photos/seed/ecommerce/1200/800",
-    },
-    {
-      title: "Real-time Chat App",
-      description:
-        "A real-time chat application using WebSockets, with typing indicators and message history.",
-      techUsed: ["Svelte", "Socket.IO", "Express", "Tailwind CSS"],
-      githubLink: "https://github.com/yourusername/chat-app",
-      liveLink: "https://chat.example.com",
-      imageUrl: "https://picsum.photos/seed/chat/1200/800",
-    },
-  ];
+    const projects = [
+        {
+            title: "Schlario",
+            description:
+                "Scholario is a fast, offline-capable school management desktop app built with Svelte and Tauri. It features student and staff management, a flexible attendance system, and a clean, customizable dashboard.",
+            techUsed: ["Svelte", "Tauri", "Tailwind CSS", "Rust"],
+            githubLink: "https://github.com/samiulbasirfahim/scholario.git",
+            liveLink: "#",
+            imageUrl: "/images/works/scholario.png",
+        },
 
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
+        {
+            title: "Schlario",
+            description:
+                "Scholario is a fast, offline-capable school management desktop app built with Svelte and Tauri. It features student and staff management, a flexible attendance system, and a clean, customizable dashboard.",
+            techUsed: ["Svelte", "Tauri", "Tailwind CSS", "Rust"],
+            githubLink: "https://github.com/samiulbasirfahim/scholario.git",
+            liveLink: "#",
+            imageUrl: "/images/works/scholario.png",
+        },
+        {
+            title: "Schlario",
+            description:
+                "Scholario is a fast, offline-capable school management desktop app built with Svelte and Tauri. It features student and staff management, a flexible attendance system, and a clean, customizable dashboard.",
+            techUsed: ["Svelte", "Tauri", "Tailwind CSS", "Rust"],
+            githubLink: "https://github.com/samiulbasirfahim/scholario.git",
+            liveLink: "#",
+            imageUrl: "/images/works/scholario.png",
+        },
+        {
+            title: "Schlario",
+            description:
+                "Scholario is a fast, offline-capable school management desktop app built with Svelte and Tauri. It features student and staff management, a flexible attendance system, and a clean, customizable dashboard.",
+            techUsed: ["Svelte", "Tauri", "Tailwind CSS", "Rust"],
+            githubLink: "https://github.com/samiulbasirfahim/scholario.git",
+            liveLink: "#",
+            imageUrl: "/images/works/scholario.png",
+        },
+    ];
 
-  useEffect(() => {
-    const lenis = new Lenis();
+    const container = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: container,
+        offset: ["start start", "end end"],
+    });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    useEffect(() => {
+        const lenis = new Lenis();
 
-    requestAnimationFrame(raf);
-  });
+        function raf(time: number) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
 
-  return (
-    <PageContainer>
-      <div ref={container}>
-        {projects.map((project, i) => {
-          const targetScale = 1 - (projects.length - i) * 0.05;
-          return (
-            <ProjectCard
-              {...project}
-              key={i}
-              index={i}
-              progress={scrollYProgress}
-              range={[i * 0.25, 1]}
-              targetScale={targetScale}
-            />
-          );
-        })}
-      </div>
-    </PageContainer>
-  );
+        requestAnimationFrame(raf);
+    });
+
+    return (
+        <PageContainer>
+            <div ref={container}>
+                {projects.map((project, i) => {
+                    const targetScale = 1 - (projects.length - i) * 0.05;
+                    return (
+                        <ProjectCard
+                            {...project}
+                            key={i}
+                            index={i}
+                            progress={scrollYProgress}
+                            range={[i * 0.25, 1]}
+                            targetScale={targetScale}
+                        />
+                    );
+                })}
+            </div>
+        </PageContainer>
+    );
 }

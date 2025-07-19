@@ -13,10 +13,11 @@ export default function ExternalLink({
   return (
     <motion.a
       href={href}
-      className="flex items-center gap-3 text-2xl overflow-y-hidden relative font-semibold"
+      className="flex items-center gap-3 text-xl overflow-y-hidden relative font-semibold text-nowrap"
       whileHover={"hover"}
       initial="rest"
       animate="rest"
+      target="_blank"
     >
       {children}
       <motion.span

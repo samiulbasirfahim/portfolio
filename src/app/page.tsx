@@ -2,16 +2,17 @@ import PageContainer from "@/components/core/PageContainer";
 import SlideUpText from "@/components/ui/SlideUpText";
 
 export default function Home() {
-  return (
-    <PageContainer>
-      <div className="flex items-end gap-8">
-        <span className="text-xl">Hello, I&apos;m</span>
-        <div className="text-6xl md:text-8xl lg:text-9xl space-y-4">
-          <SlideUpText>Samiul</SlideUpText>
-          <SlideUpText>Basir</SlideUpText>
-          <SlideUpText>Fahim</SlideUpText>
-        </div>
-      </div>
-    </PageContainer>
-  );
+    return (
+        <PageContainer>
+            <div className="hero text-4xl md:text-6xl lg:text-8xl h-[60dvh] w-full flex items-center justify-center relative">
+                <div>
+                    <SlideUpText>Samiul Basir Fahim</SlideUpText>
+                    <p className="font-semibold text-xl text-center mt-4 uppercase">
+                        Svelte | NextJS | React | Tailwind | Rust | Tauri
+                    </p>
+                </div>
+
+            </div>
+        </PageContainer>
+    );
 }

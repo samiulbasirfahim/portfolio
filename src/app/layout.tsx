@@ -1,20 +1,23 @@
 import PageTransition from "@/components/core/PageTransition";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import LayoutWrapper from "@/components/core/LayoutWrapper";
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <PageTransition>
-          <Navbar />
-          {children}
-        </PageTransition>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <LayoutWrapper>
+                <body>
+                    <PageTransition>
+                        <Navbar />
+                        {children}
+                    </PageTransition>
+                </body>
+            </LayoutWrapper>
+        </html>
+    );
 }

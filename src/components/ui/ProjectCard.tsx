@@ -1,7 +1,9 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "motion/react";
+import Image from "next/image";
 import { useRef } from "react";
+import ExternalLink from "./ExternalLink";
 
 export default function ProjectCard({
     title,
@@ -30,29 +32,56 @@ export default function ProjectCard({
             className="h-dvh flex items-start justify-center sticky w-full lg:top-[10dvh] top-[5dvh] lg:px-20"
             ref={container}
         >
-            <motion.div
-                className="relative lg:p-10 overflow-hidden rounded-md w-full h-[80dvh] bg-teal-400"
-                style={{ scale, translateY }}
-            >
-                <motion.div
-                    className="inset-0 z-0 bg-cover absolute overflow-hidden bg-center"
-                    style={{
-                        backgroundImage: `url(${imageUrl})`,
-                        scale: imageScale,
-                    }}
-                />
-                <div>{title}</div>
+            <motion.div className="relative p-4 rounded-md w-full h-[55dvh] flex bg-dark gap-4 text-background overflow-hidden">
+                {/* Left: Image */}
+                <div className="w-[40%] h-full overflow-hidden rounded relative">
+                    <Image
+                        src={imageUrl}
+                        alt={title}
+                        fill
+                        className="object-cover rounded shadow-lg"
+                        priority
+                    />
+                </div>
+
+                {/* Right: Text Content */}
+                <div className="w-[60%] h-full flex flex-col justify-between gap-2 pr-1">
+                    <div>
+                        <h2 className="text-xl font-semibold mb-1">{title}</h2>
+                        <p className="text-xs text-muted-foreground leading-snug line-clamp-5">
+                            Scholario is a fast, offline-capable school management desktop app
+                            built with Svelte and Tauri. It features student and staff
+                            management, custom attendance states, and a modular, customizable
+                            dashboard with low-memory performance. Designed for small to
+                            medium institutions, Scholario makes administrative tasks more
+                            efficient and delightful.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1 text-[10px] mt-2">
+                        {techUsed.map((tech) => (
+                            <span
+                                key={tech}
+                                className="bg-muted text-foreground px-2 py-0.5 rounded font-mono"
+                            >
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+
+                    <div className="flex gap-3 text-xs mt-2">
+                        <ExternalLink href={githubLink}>Source</ExternalLink>
+                        {liveLink !== "#" && (
+                            <ExternalLink href={liveLink}>Live</ExternalLink>
+                        )}
+                    </div>
+                </div>
             </motion.div>
         </div>
     );
 }
 
 // <div className="relative w-full rounded-2xl overflow-hidden mb-8 bg-black/60 backdrop-blur-lg text-white shadow-xl">
-//   <div
-//     className="absolute inset-0 z-0 bg-cover bg-center blur-md opacity-20"
-//
-//   />
-//
 //   <div className="relative z-10 flex flex-col md:flex-row gap-6 p-6 md:p-8">
 //     <div className="w-full md:w-1/2 h-60 md:h-auto overflow-hidden rounded-xl">
 //       <Image

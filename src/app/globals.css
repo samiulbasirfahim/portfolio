@@ -2,8 +2,7 @@
 
 @theme {
     --color-background: #fdf7f2;
-    --color-forground: #4b5c72;
-    --color-dark: #1e1e1e;
+    --color-forground: #1e1e1e;
 }
 
 .mx-dynamic {
@@ -12,4 +11,5 @@
 
 body {
     background-color: var(--color-background);
+    color: var(--color-forground);
 }
