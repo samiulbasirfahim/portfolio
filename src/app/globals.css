@@ -10,8 +10,17 @@
     @apply lg:mx-10 mx-2;
 }
 
+@font-face {
+    font-family: "therma";
+    src: url("/fonts/7dgxXADLmbrqt4lNqZmEczMyfs.woff");
+}
+
+.font-therma {
+    font-family: "therma";
+}
+
 body {
     background-color: var(--color-background);
-    /* font-family: var(--font-victor-mono); */
+    font-family: var(--font-victor-mono);
     color: var(--color-forground);
 }
