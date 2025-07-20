@@ -12,6 +12,6 @@
 
 body {
     background-color: var(--color-background);
-    font-family: var(--font-victor-mono);
+    /* font-family: var(--font-victor-mono); */
     color: var(--color-forground);
 }

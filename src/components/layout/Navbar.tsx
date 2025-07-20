@@ -73,7 +73,7 @@ export default function Navbar() {
             }}
           />
 
-          <Link href="" target="_blank">
+          <Link href="https://www.dropbox.com/scl/fi/q6yd8kdl2i0tnwsn8njq2/SamiulBasirFahim.pdf?rlkey=5hsn27wke4i0295evuern8osb&st=mwwkake8&dl=0" target="_blank">
             RESUME
           </Link>
         </motion.div>

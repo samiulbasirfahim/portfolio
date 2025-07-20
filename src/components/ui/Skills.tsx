@@ -58,7 +58,7 @@ export default function SkillSection() {
     }),
   };
   return (
-    <div className="w-full justify-center flex">
+    <div className="w-full justify-center flex mb-[20dvh]">
       <div className="flex gap-20 px-4 md:px-8 lg:px-16 flex-col md:flex-row">
         <div className="sticky md:top-32 h-max top-0 w-full flex">
           <div className="md:hidden text-4xl font-semibold top-0 sticky bg-background w-full py-3 text-center overflow-hidden">

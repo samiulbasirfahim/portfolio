@@ -2,7 +2,7 @@ import ExternalLink from "../ui/ExternalLink";
 
 export default function Footer() {
   const socialLinks = [
-    ["GitHub", "#"],
+    ["GitHub", "https://github.com/samiulbasirfahim"],
     ["LinkedIn", "#"],
     ["Twitter", "#"],
     ["CodeChef", "#"],
@@ -43,7 +43,7 @@ export default function Footer() {
       </div>
 
       <p className="text-sm text-center pb-6">
-        Built with ♥ using Next.js, Tailwind CSS, and Framer Motion.
+        Built with Next.js, Tailwind CSS, and Framer Motion.
       </p>
     </div>
   );
