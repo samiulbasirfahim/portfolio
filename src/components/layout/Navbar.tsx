@@ -73,7 +73,7 @@ export default function Navbar() {
             }}
           />
 
-          <Link href="/resume.pdf" download={'Samiul_Basir_Fahim_Resume.pdf'}>
+          <Link href="/Samiul_Basir_Fahim_Resume.pdf" download={'Samiul_Basir_Fahim_Resume.pdf'}>
             RESUME
           </Link>
         </motion.div>
