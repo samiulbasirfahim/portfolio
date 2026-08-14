@@ -147,8 +147,8 @@ function WorkCard({
                                             key={i}
                                             onClick={() => setSelectedImage(img)}
                                             className={`h-10 sm:h-12 md:h-14 w-fit max-w-[70px] sm:max-w-[80px] shrink-0 transition-all cursor-pointer flex items-center justify-center ${selectedImage === img
-                                                    ? "scale-105 opacity-100 ring-2 ring-foreground/40"
-                                                    : "opacity-40 hover:opacity-80"
+                                                ? "scale-105 opacity-100"
+                                                : "opacity-40 hover:opacity-80"
                                                 }`}
                                         >
                                             <img
@@ -253,8 +253,8 @@ export default function WorksPage() {
                         key={project.id}
                         onClick={() => scrollToProject(index)}
                         className={`flex items-center gap-2 cursor-pointer transition-all duration-200 group ${activeIndex === index
-                                ? "opacity-100 font-bold text-foreground translate-x-1"
-                                : "opacity-35 hover:opacity-80 text-foreground"
+                            ? "opacity-100 font-bold text-foreground translate-x-1"
+                            : "opacity-35 hover:opacity-80 text-foreground"
                             }`}
                     >
                         <span className="text-xs opacity-60">
