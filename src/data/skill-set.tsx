@@ -2,7 +2,7 @@ export interface Skill {
     title: string;
     description: string;
     icon: string;
-    level: string;
+    level: "beginner" | "intermediate" | "advanced";
 }
 
 export interface SkillsCategory {
@@ -17,179 +17,205 @@ export const skillset: SkillsCategory[] = [
             {
                 title: "Rust",
                 level: "intermediate",
-                description: "Safe, fast, and powerful system programming language.",
+                description:
+                    "Systems programming with a focus on performance and concurrency.",
                 icon: "vscode-icons:file-type-rust",
-            },
-            {
-                title: "JavaScript",
-                level: "advanced",
-                description: "The go-to language for interactive web development.",
-                icon: "logos:javascript",
             },
             {
                 title: "TypeScript",
                 level: "advanced",
-                description: "Typed superset of JS for better tooling and safety.",
+                description:
+                    "My main language for web and cross-platform applications.",
                 icon: "logos:typescript-icon",
             },
             {
                 title: "C",
-                level: "advanced",
-                description:
-                    "Low-level language for systems and performance-critical code.",
+                level: "intermediate",
+                description: "Low-level programming and system-oriented development.",
                 icon: "logos:c",
             },
             {
                 title: "C++",
-                level: "advanced",
-                description: "C with object-oriented features and performance.",
+                level: "intermediate",
+                description:
+                    "Performance-oriented programming with lower-level control.",
                 icon: "logos:c-plusplus",
             },
             {
-                title: "Bash",
-                level: "advanced",
-                description: "Scripting language for Linux command-line tasks.",
-                icon: "logos:bash-icon",
+                title: "Python",
+                level: "intermediate",
+                description: "Scripting, automation, and backend development.",
+                icon: "logos:python",
             },
             {
-                title: "SQL",
+                title: "Lua",
                 level: "intermediate",
-                description: "Language for querying and managing structured data.",
-                icon: "oui:vis-query-sql",
+                description:
+                    "Lightweight scripting for configuration and embedded logic.",
+                icon: "logos:lua",
             },
         ],
     },
+
     {
         title: "Frameworks",
         skills: [
             {
+                title: "React Native",
+                level: "advanced",
+                description: "Building mobile apps with native platform integration.",
+                icon: "logos:react",
+            },
+            {
                 title: "React",
                 level: "advanced",
-                description: "Component-based library for building UIs.",
+                description: "Building interactive, component-driven web interfaces.",
                 icon: "logos:react",
             },
             {
                 title: "Next.js",
                 level: "advanced",
-                description: "Full-stack React framework with routing and SSR.",
+                description: "Building production web applications with React.",
                 icon: "logos:nextjs-icon",
             },
             {
                 title: "Svelte",
                 level: "intermediate",
-                description: "Compiler-first UI framework with minimal overhead.",
+                description: "Building compiled, lightweight web interfaces.",
                 icon: "logos:svelte-icon",
             },
             {
-                title: "SvelteKit",
+                title: "Actix Web",
                 level: "intermediate",
-                description: "App framework for Svelte with routing and SSR.",
-                icon: "logos:svelte-icon",
+                description: "Building backend services and APIs with Rust.",
+                icon: "simple-icons:actix",
+            },
+            {
+                title: "Express.js",
+                level: "intermediate",
+                description: "Building backend services and APIs with Node.js.",
+                icon: "simple-icons:express",
+            },
+            {
+                title: "FastAPI",
+                level: "intermediate",
+                description: "Building backend services and APIs with Python.",
+                icon: "logos:fastapi-icon",
             },
             {
                 title: "Tauri",
                 level: "intermediate",
-                description: "Build desktop apps using Rust and frontend tech.",
-                icon: "logos:tauri",
+                description:
+                    "Building lightweight cross-platform desktop apps with web frontends.",
+                icon: "simple-icons:tauri",
             },
         ],
     },
+
     {
         title: "Libraries",
         skills: [
             {
                 title: "Tailwind CSS",
                 level: "advanced",
-                description: "Utility-first CSS for rapid UI development.",
+                description: "My go-to approach for styling web interfaces.",
                 icon: "devicon:tailwindcss",
             },
             {
-                title: "Framer Motion",
+                title: "Motion",
                 level: "intermediate",
-                description: "Powerful animations for React components.",
+                description: "Creating smooth animations and interactive interfaces.",
                 icon: "logos:framer",
             },
             {
-                title: "Hono",
+                title: "Tokio",
                 level: "intermediate",
-                description: "Tiny web framework for fast APIs and servers.",
-                icon: "logos:hono",
-            },
-            {
-                title: "Express.js",
-                level: "intermediate",
-                description: "Lightweight backend framework for Node.js.",
-                icon: "simple-icons:express",
-            },
-            {
-                title: "Raylib",
-                level: "beginner",
-                description: "Simple C library for making games and graphics.",
-                icon: "simple-icons:raylib",
-            },
-        ],
-    },
-    {
-        title: "Databases",
-        skills: [
-            {
-                title: "SQLite",
-                level: "beginner",
-                description: "Lightweight SQL database for apps and tools.",
-                icon: "devicon:sqlite",
-            },
-            {
-                title: "MariaDB",
-                level: "beginner",
-                description: "Open-source SQL database, MySQL-compatible.",
-                icon: "devicon:mysql",
-            },
-            {
-                title: "MongoDB",
-                level: "intermediate",
-                description: "NoSQL database using flexible JSON-like docs.",
-                icon: "logos:mongodb-icon",
+                description:
+                    "Working with asynchronous and concurrent Rust applications.",
+                icon: "simple-icons:tokio",
             },
             {
                 title: "Prisma",
                 level: "intermediate",
-                description: "Type-safe ORM for Node.js and SQL databases.",
+                description: "Type-safe database access for application backends.",
                 icon: "material-icon-theme:prisma",
             },
             {
-                title: "Mongoose",
-                level: "beginner",
-                description: "MongoDB ODM for schema and model handling.",
-                icon: "devicon:mongoose",
+                title: "GraphQL",
+                level: "intermediate",
+                description: "Querying and shaping data across client and server.",
+                icon: "logos:graphql",
+            },
+            {
+                title: "Nitro Modules",
+                level: "intermediate",
+                description:
+                    "Building high-performance native modules for React Native.",
+                icon: "mdi:puzzle",
             },
         ],
     },
+
     {
-        title: "Other",
+        title: "Databases",
         skills: [
             {
-                title: "Node.js",
+                title: "PostgreSQL",
                 level: "intermediate",
-                description: "JS runtime for backend, APIs, and tools.",
-                icon: "logos:nodejs-icon",
+                description: "My main relational database for backend projects.",
+                icon: "logos:postgresql",
             },
             {
-                title: "Bun",
+                title: "MongoDB",
                 level: "intermediate",
-                description: "Fast JS runtime with native TS and bundler.",
-                icon: "logos:bun",
+                description: "Working with document-based application data.",
+                icon: "logos:mongodb-icon",
             },
             {
-                title: "Void Linux",
+                title: "Redis",
+                level: "intermediate",
+                description: "Using Redis for caching and real-time workloads.",
+                icon: "logos:redis",
+            },
+        ],
+    },
+
+    {
+        title: "System",
+        skills: [
+            {
+                title: "Linux",
                 level: "advanced",
-                description: "Minimal Linux distro focused on performance.",
-                icon: "logos:void",
+                description: "My main environment for development and system work.",
+                icon: "logos:linux-tux",
             },
             {
-                title: "Problem Solving",
+                title: "Android",
+                level: "advanced",
+                description:
+                    "Working with Android internals, boot chains, and custom ROMs.",
+                icon: "logos:android-icon",
+            },
+            {
+                title: "KernelSU",
                 level: "intermediate",
-                description: "Strong skills in logic, patterns, and challenges.",
-                icon: "icon-park:thinking-problem",
+                description:
+                    "Working with KernelSU modules and Android system customization.",
+                icon: "mdi:shield-key-outline",
+            },
+            {
+                title: "React Native Modules",
+                level: "intermediate",
+                description:
+                    "Building native plugins and bridging Android and iOS features.",
+                icon: "logos:react",
+            },
+            {
+                title: "X11 / Xlib",
+                level: "intermediate",
+                description:
+                    "Low-level windowing and display server programming on Linux.",
+                icon: "mdi:monitor",
             },
         ],
     },
