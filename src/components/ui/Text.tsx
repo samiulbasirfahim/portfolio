@@ -1,3 +1,5 @@
+"use client";
+
 import { HTMLAttributes, ReactNode, useRef } from "react";
 import { useCursorContext } from "../core/CursorWrapper";
 

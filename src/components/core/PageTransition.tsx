@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
@@ -14,9 +14,9 @@ type TransitionContextType = {
 
 const TransitionContext = createContext<TransitionContextType>({
   loading: false,
-  setLoading: () => {},
+  setLoading: () => { },
   firstLoad: false,
-  setFirstLoad: () => {},
+  setFirstLoad: () => { },
 });
 
 export const useTransitionContext = () => useContext(TransitionContext);
@@ -30,14 +30,13 @@ export function CustomLink({
   children: React.ReactNode;
 }) {
   const { setLoading } = useTransitionContext();
-
   const router = useRouter();
-
   const currentPathname = usePathname();
 
   const normalizedHref = href.startsWith("/")
     ? href.split("?")[0]
     : `/${href.split("?")[0]}`;
+
   return (
     <Link
       href={href}
@@ -46,7 +45,6 @@ export function CustomLink({
         setTimeout(() => {
           router.push(href);
         }, 800);
-        console.log("Route change started:", href, new Date().toISOString());
         if (normalizedHref !== currentPathname) {
           setLoading(true);
         }
@@ -64,11 +62,7 @@ export default function PageTransition({
   children: React.ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
-
   const [firstLoad, setFirstLoad] = useState(true);
-  useEffect(() => {
-    console.log(`Current state for loading is ${loading}`);
-  }, [loading]);
 
   const columnCount = 4;
 
@@ -78,29 +72,51 @@ export default function PageTransition({
     >
       <AnimatePresence>
         {loading && (
-          <motion.div className="h-dvh w-dvw fixed top-0 left-0 flex z-[9999]">
+          <motion.div className="h-dvh w-dvw fixed top-0 left-0 flex z-[9999] overflow-hidden pointer-events-none">
             {[...Array(columnCount)].map((_, i) => {
               const j = columnCount - i;
+              const transitionConfig = {
+                duration: 0.35,
+                delay: j * 0.08,
+                ease: [0.22, 1, 0.36, 1] as const,
+              };
+
               return (
                 <motion.div
-                  className="bg-black relative w-full h-full"
+                  className="bg-black relative w-full h-full overflow-hidden"
                   key={i}
-                  initial={{ top: "100vh" }}
+                  initial={{ y: "100%" }}
                   animate={{
-                    top: 0,
-                    transition: {
-                      duration: 0.3,
-                      delay: j * 0.08,
-                    },
+                    y: 0,
+                    transition: transitionConfig,
                   }}
                   exit={{
-                    height: 0,
-                    transition: {
-                      duration: 0.3,
-                      delay: j * 0.08,
-                    },
+                    y: "-100%",
+                    transition: transitionConfig,
                   }}
-                />
+                >
+                  <motion.div
+                    className="absolute top-0 w-screen h-screen pointer-events-none select-none"
+                    style={{
+                      left: `-${i * (100 / columnCount)}vw`,
+                    }}
+                    initial={{ y: "-100%" }}
+                    animate={{
+                      y: 0,
+                      transition: transitionConfig,
+                    }}
+                    exit={{
+                      y: "100%",
+                      transition: transitionConfig,
+                    }}
+                  >
+                    <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
+                      <span className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-white uppercase font-mono">
+                        FAHIM
+                      </span>
+                    </div>
+                  </motion.div>
+                </motion.div>
               );
             })}
           </motion.div>

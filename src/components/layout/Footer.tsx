@@ -1,12 +1,11 @@
 import ExternalLink from "../ui/ExternalLink";
+import Text from "../ui/Text";
 
 export default function Footer() {
     const socialLinks = [
         ["GitHub", "https://github.com/samiulbasirfahim"],
-        ["LinkedIn", "#"],
-        ["Twitter", "#"],
-        ["CodeChef", "#"],
-        ["LeetCode", "#"],
+        ["LinkedIn", "https://www.linkedin.com/in/samiulbasirfahim"],
+        ["CodeChef", "https://www.codechef.com/users/samiulbsrfahim"],
     ];
 
     const bangladeshTime = new Date(
@@ -18,33 +17,40 @@ export default function Footer() {
     });
 
     return (
-        <div className="sticky bottom-0 z-0 bg-foreground text-background overflow-x-hidden">
-            <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20 px-6 py-16">
-                <div className="w-full flex flex-col items-center md:items-end justify-end gap-4 order-2 md:order-1 border-t-3 border-t-background/30 md:border-0 pt-12 md:pt-0">
-                    {socialLinks.map(([title, href], i) => (
-                        <ExternalLink key={i} href={href}>
-                            {title}
-                        </ExternalLink>
-                    ))}
+        <footer className="sticky bottom-0 z-0 bg-foreground text-background">
+            <div className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-12 border-t border-background/20">
+                <div className="flex flex-col gap-6 max-w-sm">
+                    <div>
+                        <h2 className="text-2xl md:text-3xl font-bold mb-2">Samiul Basir Fahim</h2>
+                        <Text className="text-background/70">
+                            Crafting digital experiences with purpose. Available for freelance opportunities.
+                        </Text>
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                        <a href="mailto:samiulbasirfahim.rxen@gmail.com" className="font-semibold text-lg hover:underline underline-offset-4 decoration-2">
+                            samiulbasirfahim.rxen@gmail.com
+                        </a>
+                        <p className="text-background/70 text-sm">
+                            Mymensingh, Bangladesh • {bangladeshTime} (BST)
+                        </p>
+                    </div>
                 </div>
 
-                <div className="w-full flex flex-col items-center md:items-start justify-end gap-4 font-semibold text-lg md:text-xl order-1 md:order-2">
-                    <p className="text-3xl md:text-5xl font-bold">Samiul Basir Fahim</p>
-                    <p>Mymensingh, Bangladesh</p>
-                    <a
-                        href="mailto:samiulbasirfahim.rxen@gmail.com"
-                        className="underline underline-offset-2"
-                    >
-                        samiulbasirfahim.rxen@gmail.com
-                    </a>
-                    <p>-----</p>
-                    <p className="text-sm md:text-base">Time: {bangladeshTime} (BST)</p>
+                <div className="flex flex-col items-start md:items-end gap-6">
+                    <div className="flex flex-wrap gap-4 md:gap-8">
+                        {socialLinks.map(([title, href], i) => (
+                            <ExternalLink key={i} href={href}>
+                                {title}
+                            </ExternalLink>
+                        ))}
+                    </div>
+
+                    <Text className="text-sm text-background/50">
+                        &copy; {new Date().getFullYear()} Samiul Basir Fahim. All rights reserved.
+                    </Text>
                 </div>
             </div>
-
-            <p className="text-sm text-center pb-6">
-                Built with Next.js, Tailwind CSS, and Framer Motion.
-            </p>
-        </div>
+        </footer>
     );
 }
